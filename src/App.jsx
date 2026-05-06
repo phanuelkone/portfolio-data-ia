@@ -30,49 +30,67 @@ const skills = [
 
 const projects = [
   {
-    title: 'Analyse des ventes e-commerce',
-    type: 'Data Analysis',
+    title: 'Pipeline de données ETL',
+    type: 'ETL & BI',
     description:
-      'Exploration des ventes, segmentation client et recommandations pour suivre les produits les plus performants.',
-    stack: ['Python', 'Pandas', 'Power BI'],
-    metric: '+18%',
-    metricLabel: 'opportunité CA',
+      'Conception d’un pipeline complet pour ingérer, transformer et stocker des données dans une base SQL.',
+    stack: ['Python', 'SQL', 'Power BI'],
+    metric: 'ETL',
+    metricLabel: 'ingestion, transformation, dashboards',
   },
   {
-    title: 'Prédiction du churn client',
+    title: 'Système de recommandation musicale',
     type: 'Machine Learning',
     description:
-      'Modèle de classification pour identifier les clients à risque et prioriser les actions de rétention.',
-    stack: ['Scikit-learn', 'SQL', 'ROC-AUC'],
-    metric: '0.84',
-    metricLabel: 'score ROC-AUC',
+      'Développement d’un moteur de recommandation basé sur la similarité cosinus et l’analyse exploratoire.',
+    stack: ['Python', 'Pandas', 'API YouTube'],
+    metric: 'API',
+    metricLabel: 'feature engineering et visualisation',
   },
   {
-    title: 'Dashboard RH et performance',
-    type: 'Business Intelligence',
+    title: 'Pipeline de données sportives',
+    type: 'Data Science',
     description:
-      'Tableau de bord interactif pour suivre l’absentéisme, les effectifs, les départs et les indicateurs RH.',
-    stack: ['Power BI', 'DAX', 'Excel'],
-    metric: '6',
-    metricLabel: 'KPI suivis',
+      'Traitement de données massives, création de datasets ML et développement de modèles prédictifs.',
+    stack: ['Python', 'Spark', 'Machine Learning'],
+    metric: 'ML',
+    metricLabel: 'classification, régression, statistiques',
   },
 ]
 
-const timeline = [
+const experiences = [
   {
-    period: 'Aujourd’hui',
-    title: 'Étudiant en Data & Intelligence Artificielle',
-    text: 'Construction de compétences solides en analyse, statistiques, bases de données et machine learning.',
+    period: 'Mai 2025 - Août 2025',
+    title: 'Stagiaire Data Scientist',
+    organization: 'MTN, Côte d’Ivoire',
+    items: [
+      'Développement de pipelines de traitement de données avec Python et SQL',
+      'Nettoyage, structuration et amélioration de la qualité des données',
+      'Création de dashboards et suivi des indicateurs de performance (KPI)',
+      'Développement de modèles de prédiction du churn',
+    ],
   },
   {
-    period: 'Objectif court terme',
-    title: 'Stage ou alternance Data Analyst',
-    text: 'Contribuer à des missions concrètes : reporting, dashboards, analyse métier et automatisation.',
+    period: 'Juillet 2023 - Août 2023',
+    title: 'Stagiaire Développeur',
+    organization: '2IST',
+    items: [
+      'Refonte d’interfaces utilisateurs avec HTML, CSS et Bootstrap',
+      'Amélioration de l’expérience utilisateur (UX) et optimisation du design',
+    ],
+  },
+]
+
+const education = [
+  {
+    period: 'MSc 1',
+    title: 'Data Management',
+    organization: 'ESILV Paris',
   },
   {
-    period: 'Objectif moyen terme',
-    title: 'Évolution vers Data Scientist',
-    text: 'Développer des modèles prédictifs utiles et expliquer leurs résultats aux équipes métiers.',
+    period: 'Bachelor',
+    title: 'Développeur Data & IA',
+    organization: 'ECE Paris',
   },
 ]
 
@@ -88,6 +106,7 @@ function App() {
           <a href="#apropos">Profil</a>
           <a href="#competences">Compétences</a>
           <a href="#projets">Projets</a>
+          <a href="#parcours">Parcours</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -128,16 +147,16 @@ function App() {
 
         <section className="metrics-band" aria-label="Aperçu du profil">
           <div>
-            <strong>3</strong>
-            <span>axes métier : analyse, BI, IA</span>
+            <strong>2</strong>
+            <span>expériences professionnelles</span>
           </div>
           <div>
-            <strong>SQL</strong>
-            <span>requêtes, jointures, indicateurs</span>
+            <strong>3</strong>
+            <span>projets data et IA</span>
           </div>
           <div>
             <strong>Python</strong>
-            <span>exploration, nettoyage, modèles</span>
+            <span>pipelines, EDA, modèles ML</span>
           </div>
           <div>
             <strong>Power BI</strong>
@@ -152,10 +171,10 @@ function App() {
           </div>
           <div className="profile-grid">
             <p>
-              Je suis étudiant en Data & Intelligence Artificielle. Mon projet
-              professionnel est de devenir Data Analyst, puis d’évoluer vers des
-              missions de Data Scientist lorsque mes projets nécessitent de la
-              prédiction, de l’automatisation ou du machine learning.
+              Je suis étudiant en Data & Intelligence Artificielle, orienté Data
+              Analyst et Data Scientist. Mes expériences m’ont permis de
+              travailler sur des pipelines de données, des dashboards KPI et des
+              modèles de prédiction du churn.
             </p>
             <p>
               J’aime partir d’un problème concret, comprendre les données,
@@ -187,7 +206,7 @@ function App() {
         <section className="section projects-section" id="projets">
           <div className="section-heading">
             <p className="section-kicker">Projets</p>
-            <h2>Des cas pratiques à présenter en entretien.</h2>
+            <h2>Des projets data construits autour de cas concrets.</h2>
           </div>
           <div className="projects-grid">
             {projects.map((project) => (
@@ -209,17 +228,33 @@ function App() {
           </div>
         </section>
 
-        <section className="section journey-section">
+        <section className="section journey-section" id="parcours">
           <div className="section-heading">
             <p className="section-kicker">Parcours</p>
-            <h2>Une progression claire vers les métiers de la data.</h2>
+            <h2>Expérience professionnelle et formation data.</h2>
           </div>
           <div className="timeline">
-            {timeline.map((step) => (
+            {experiences.map((step) => (
               <article className="timeline-item" key={step.title}>
                 <span>{step.period}</span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
+                <div className="timeline-heading">
+                  <h3>{step.title}</h3>
+                  <strong>{step.organization}</strong>
+                </div>
+                <ul>
+                  {step.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+          <div className="education-grid" aria-label="Formation">
+            {education.map((item) => (
+              <article className="education-card" key={item.title}>
+                <span>{item.period}</span>
+                <h3>{item.title}</h3>
+                <p>{item.organization}</p>
               </article>
             ))}
           </div>
