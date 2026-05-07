@@ -1,4 +1,5 @@
 import heroImg from './assets/hero.png'
+import profilePhoto from './assets/profile-photo.png'
 import './App.css'
 
 const skills = [
@@ -170,17 +171,25 @@ function App() {
             <h2>Un profil junior orienté décision et impact métier.</h2>
           </div>
           <div className="profile-grid">
-            <p>
-              Je suis étudiant en Data & Intelligence Artificielle, orienté Data
-              Analyst et Data Scientist. Mes expériences m’ont permis de
-              travailler sur des pipelines de données, des dashboards KPI et des
-              modèles de prédiction du churn.
-            </p>
-            <p>
-              J’aime partir d’un problème concret, comprendre les données,
-              construire des indicateurs fiables, puis présenter les résultats
-              de façon simple pour aider à prendre de meilleures décisions.
-            </p>
+            <figure className="profile-photo-card">
+              <img
+                src={profilePhoto}
+                alt="Portrait de N'tcho Phanuel Eliel Koné"
+              />
+            </figure>
+            <div className="profile-copy">
+              <p>
+                Je suis étudiant en Data & Intelligence Artificielle, orienté Data
+                Analyst et Data Scientist. Mes expériences m’ont permis de
+                travailler sur des pipelines de données, des dashboards KPI et des
+                modèles de prédiction du churn.
+              </p>
+              <p>
+                J’aime partir d’un problème concret, comprendre les données,
+                construire des indicateurs fiables, puis présenter les résultats
+                de façon simple pour aider à prendre de meilleures décisions.
+              </p>
+            </div>
           </div>
         </section>
 
