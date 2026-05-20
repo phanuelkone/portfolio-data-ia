@@ -1,6 +1,34 @@
+import { useEffect } from 'react'
 import heroImg from './assets/hero.png'
 import profilePhoto from './assets/profile-photo.png'
 import './App.css'
+
+const credlyBadgeId = 'c0069127-cda3-40b9-b911-7732e1541e0b'
+const credlyBadgeUrl = `https://www.credly.com/badges/${credlyBadgeId}/public_url`
+
+function CredlyBadge() {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://cdn.credly.com/assets/utilities/embed.js'
+    script.async = true
+    script.dataset.credlyEmbed = 'true'
+    document.body.appendChild(script)
+
+    return () => {
+      script.remove()
+    }
+  }, [])
+
+  return (
+    <div
+      className="credly-badge"
+      data-iframe-width="150"
+      data-iframe-height="270"
+      data-share-badge-id={credlyBadgeId}
+      data-share-badge-host="https://www.credly.com"
+    ></div>
+  )
+}
 
 const skills = [
   {
@@ -106,6 +134,7 @@ function App() {
         <nav className="nav-links" aria-label="Navigation principale">
           <a href="#apropos">Profil</a>
           <a href="#competences">Compétences</a>
+          <a href="#certifications">Certifications</a>
           <a href="#projets">Projets</a>
           <a href="#parcours">Parcours</a>
           <a href="#contact">Contact</a>
@@ -209,6 +238,29 @@ function App() {
                 </ul>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="section certifications-section" id="certifications">
+          <div className="section-heading">
+            <p className="section-kicker">Certification</p>
+            <h2>Une certification AWS vérifiable sur Credly.</h2>
+          </div>
+          <div className="certification-panel">
+            <div className="certification-copy">
+              <span>AWS</span>
+              <h3>Certification cloud</h3>
+              <p>
+                Badge officiel Credly lié à mon parcours cloud, en complément de
+                mes compétences AWS et Azure.
+              </p>
+              <a href={credlyBadgeUrl} target="_blank" rel="noreferrer">
+                Voir sur Credly
+              </a>
+            </div>
+            <div className="certification-badge-wrap" aria-label="Badge AWS Credly">
+              <CredlyBadge />
+            </div>
           </div>
         </section>
 

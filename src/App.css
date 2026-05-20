@@ -397,6 +397,73 @@
   padding: 7px 10px;
 }
 
+.certifications-section {
+  background: #ffffff;
+}
+
+.certification-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  align-items: center;
+  gap: 36px;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(18, 111, 133, 0.08), transparent 45%),
+    #ffffff;
+  box-shadow: 0 18px 40px rgba(31, 41, 55, 0.06);
+}
+
+.certification-copy span {
+  color: var(--coral);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.certification-copy h3 {
+  margin: 12px 0 0;
+  color: var(--ink);
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.certification-copy p {
+  max-width: 640px;
+  margin: 14px 0 0;
+  color: var(--body);
+  line-height: 1.68;
+}
+
+.certification-copy a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 22px;
+  padding: 0 16px;
+  border-radius: 8px;
+  color: #ffffff;
+  background: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.certification-badge-wrap {
+  display: grid;
+  min-height: 300px;
+  place-items: center;
+}
+
+.credly-badge {
+  display: grid;
+  min-width: 150px;
+  min-height: 270px;
+  place-items: center;
+}
+
 .projects-section {
   background: #f2f7f5;
 }
@@ -619,6 +686,7 @@
   .profile-grid,
   .skills-grid,
   .projects-grid,
+  .certification-panel,
   .education-grid,
   .contact-section {
     grid-template-columns: 1fr;
@@ -651,6 +719,14 @@
 
   .profile-photo-card {
     width: min(340px, 100%);
+  }
+
+  .certification-panel {
+    padding: 22px;
+  }
+
+  .certification-badge-wrap {
+    justify-content: start;
   }
 
   .timeline-item {
