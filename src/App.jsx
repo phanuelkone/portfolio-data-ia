@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import heroImg from './assets/hero.png'
-import profilePhoto from './assets/profile-photo.png'
+import profilePhoto from './assets/profile-photo.jpeg'
 import './App.css'
 
 const credlyBadgeId = 'c0069127-cda3-40b9-b911-7732e1541e0b'
@@ -186,14 +186,6 @@ function App() {
                   src={profilePhoto}
                   alt="Portrait de N'tcho Phanuel Eliel Koné"
                 />
-              </div>
-              <div className="hero-floating-card hero-floating-card-left">
-                <span>Pipeline</span>
-                <strong>Python + SQL</strong>
-              </div>
-              <div className="hero-floating-card hero-floating-card-right">
-                <span>Certification</span>
-                <strong>AWS</strong>
               </div>
             </div>
           </div>
