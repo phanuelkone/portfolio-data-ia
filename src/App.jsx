@@ -30,30 +30,99 @@ function CredlyBadge() {
   )
 }
 
-const skills = [
+const iconBase = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons'
+
+const skillGroups = [
   {
-    title: 'Langages',
-    items: ['Python', 'SQL', 'Java'],
+    titleAccent: 'Programming',
+    title: 'Languages',
+    items: [
+      {
+        name: 'Python',
+        mark: 'Py',
+        icon: `${iconBase}/python/python-original.svg`,
+      },
+      { name: 'SQL', mark: 'SQL' },
+      { name: 'Java', mark: 'Jv', icon: `${iconBase}/java/java-original.svg` },
+    ],
   },
   {
-    title: 'Data & IA',
-    items: ['Pandas', 'NumPy', 'Scikit-learn', 'TensorFlow'],
+    titleAccent: 'Data & IA',
+    title: 'Libraries',
+    items: [
+      { name: 'Pandas', mark: 'Pd', icon: `${iconBase}/pandas/pandas-original.svg` },
+      { name: 'NumPy', mark: 'Np', icon: `${iconBase}/numpy/numpy-original.svg` },
+      {
+        name: 'Scikit-learn',
+        mark: 'SK',
+        icon: `${iconBase}/scikitlearn/scikitlearn-original.svg`,
+      },
+      {
+        name: 'TensorFlow',
+        mark: 'TF',
+        icon: `${iconBase}/tensorflow/tensorflow-original.svg`,
+      },
+    ],
   },
   {
-    title: 'DataViz',
-    items: ['Power BI', 'Matplotlib'],
+    titleAccent: 'Data Visualization',
+    title: 'Tools',
+    items: [
+      { name: 'Power BI', mark: 'BI' },
+      {
+        name: 'Matplotlib',
+        mark: 'Mp',
+        icon: `${iconBase}/matplotlib/matplotlib-original.svg`,
+      },
+    ],
   },
   {
-    title: 'Bases de données',
-    items: ['MySQL', 'SQL Server'],
+    titleAccent: 'Database',
+    title: 'Systems',
+    items: [
+      { name: 'MySQL', mark: 'My', icon: `${iconBase}/mysql/mysql-original.svg` },
+      {
+        name: 'SQL Server',
+        mark: 'SQL',
+        icon: `${iconBase}/microsoftsqlserver/microsoftsqlserver-original.svg`,
+      },
+    ],
   },
   {
-    title: 'Outils',
-    items: ['Git', 'GitHub', 'Pentaho', 'Excel'],
+    titleAccent: 'Tools',
+    title: 'Workflow',
+    items: [
+      { name: 'Git', mark: 'Git', icon: `${iconBase}/git/git-original.svg` },
+      { name: 'GitHub', mark: 'GH', icon: `${iconBase}/github/github-original.svg` },
+      { name: 'Pentaho', mark: 'P' },
+      { name: 'Excel', mark: 'XLS' },
+    ],
   },
   {
-    title: 'Cloud',
-    items: ['AWS', 'Azure'],
+    titleAccent: 'Cloud',
+    title: 'Platforms',
+    items: [
+      {
+        name: 'AWS',
+        mark: 'AWS',
+        icon: `${iconBase}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+      },
+      { name: 'Azure', mark: 'Az', icon: `${iconBase}/azure/azure-original.svg` },
+    ],
+  },
+  {
+    titleAccent: 'Data Analytic',
+    title: 'Methods',
+    methods: [
+      'EDA',
+      'ETL pipelines',
+      'Feature engineering',
+      'Classification',
+      'Regression',
+      'Clustering',
+      'KPI analysis',
+      'Churn prediction',
+    ],
   },
 ]
 
@@ -232,22 +301,58 @@ function App() {
           </div>
         </section>
 
-        <section className="section" id="competences">
-          <div className="section-heading">
-            <p className="section-kicker">Compétences</p>
-            <h2>Les bases techniques pour analyser, expliquer et prévoir.</h2>
-          </div>
-          <div className="skills-grid">
-            {skills.map((skill) => (
-              <article className="skill-card" key={skill.title}>
-                <h3>{skill.title}</h3>
-                <ul>
-                  {skill.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
+        <section className="technical-skills-section" id="competences">
+          <div className="technical-skills-inner">
+            <div className="technical-skills-header">
+              <span>
+                <strong>Technical</strong> Skills
+              </span>
+              <h2>Un stack data complet, de l’analyse au cloud.</h2>
+            </div>
+            <div className="technical-skills-grid">
+              {skillGroups.map((group) => (
+                <article className="technical-skill-column" key={group.title}>
+                  <h3>
+                    <span>{group.titleAccent}</span>
+                    {group.title}
+                  </h3>
+                  {group.items ? (
+                    <ul className="logo-skill-list">
+                      {group.items.map((item) => (
+                        <li key={item.name}>
+                          <span
+                            className={`skill-logo${item.icon ? ' has-icon' : ''}`}
+                            aria-hidden="true"
+                          >
+                            <span>{item.mark}</span>
+                            {item.icon ? (
+                              <img
+                                src={item.icon}
+                                alt=""
+                                loading="lazy"
+                                onError={(event) => {
+                                  event.currentTarget.style.display = 'none'
+                                  event.currentTarget.parentElement?.classList.remove(
+                                    'has-icon',
+                                  )
+                                }}
+                              />
+                            ) : null}
+                          </span>
+                          <span>{item.name}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <ul className="method-list">
+                      {group.methods.map((method) => (
+                        <li key={method}>{method}</li>
+                      ))}
+                    </ul>
+                  )}
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
