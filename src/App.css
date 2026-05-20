@@ -466,7 +466,7 @@
 
 .technical-skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   row-gap: 46px;
 }
 
@@ -476,7 +476,7 @@
   border-left: 1px solid var(--line);
 }
 
-.technical-skill-column:nth-child(4n + 1) {
+.technical-skill-column:nth-child(3n + 1) {
   border-left: 0;
   padding-left: 0;
 }
@@ -543,6 +543,7 @@
   position: absolute;
   width: 42px;
   max-height: 42px;
+  border-radius: 8px;
   object-fit: contain;
 }
 
@@ -1048,6 +1049,7 @@
   }
 
   .technical-skill-column,
+  .technical-skill-column:nth-child(3n + 1),
   .technical-skill-column:nth-child(4n + 1) {
     padding: 24px 24px 0;
     border-left: 1px solid var(--line);
@@ -1123,6 +1125,7 @@
   }
 
   .technical-skill-column,
+  .technical-skill-column:nth-child(3n + 1),
   .technical-skill-column:nth-child(2n + 1),
   .technical-skill-column:nth-child(4n + 1) {
     min-height: auto;

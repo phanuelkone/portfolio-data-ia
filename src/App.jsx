@@ -1,5 +1,8 @@
 import { useEffect } from 'react'
+import excelLogo from './assets/excel-logo.svg'
 import heroImg from './assets/hero.png'
+import pentahoLogo from './assets/pentaho-logo.png'
+import powerBiLogo from './assets/powerbi-logo.svg'
 import profilePhoto from './assets/profile-photo.jpeg'
 import './App.css'
 
@@ -68,7 +71,7 @@ const skillGroups = [
     titleAccent: 'Data Visualization',
     title: 'Tools',
     items: [
-      { name: 'Power BI', mark: 'BI' },
+      { name: 'Power BI', mark: 'BI', icon: powerBiLogo },
       {
         name: 'Matplotlib',
         mark: 'Mp',
@@ -94,20 +97,8 @@ const skillGroups = [
     items: [
       { name: 'Git', mark: 'Git', icon: `${iconBase}/git/git-original.svg` },
       { name: 'GitHub', mark: 'GH', icon: `${iconBase}/github/github-original.svg` },
-      { name: 'Pentaho', mark: 'P' },
-      { name: 'Excel', mark: 'XLS' },
-    ],
-  },
-  {
-    titleAccent: 'Cloud',
-    title: 'Platforms',
-    items: [
-      {
-        name: 'AWS',
-        mark: 'AWS',
-        icon: `${iconBase}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
-      },
-      { name: 'Azure', mark: 'Az', icon: `${iconBase}/azure/azure-original.svg` },
+      { name: 'Pentaho', mark: 'P', icon: pentahoLogo },
+      { name: 'Excel', mark: 'XLS', icon: excelLogo },
     ],
   },
   {
@@ -367,7 +358,7 @@ function App() {
               <h3>Certification cloud</h3>
               <p>
                 Badge officiel Credly lié à mon parcours cloud, en complément de
-                mes compétences AWS et Azure.
+                mon profil Data & IA.
               </p>
               <a href={credlyBadgeUrl} target="_blank" rel="noreferrer">
                 Voir sur Credly
