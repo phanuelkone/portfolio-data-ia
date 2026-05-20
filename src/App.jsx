@@ -156,21 +156,45 @@ function App() {
             </div>
           </div>
 
-          <div className="hero-content">
-            <p className="eyebrow">Étudiant Data & IA</p>
-            <h1>N'tcho Phanuel Eliel Koné</h1>
-            <p className="hero-copy">
-              Futur Data Analyst ou Data Scientist, je transforme les données en
-              analyses claires, tableaux de bord utiles et modèles prédictifs
-              compréhensibles.
-            </p>
-            <div className="hero-actions" aria-label="Actions principales">
-              <a className="primary-action" href="#projets">
-                Voir mes projets
-              </a>
-              <a className="secondary-action" href="#contact">
-                Me contacter
-              </a>
+          <div className="hero-layout">
+            <div className="hero-content">
+              <p className="eyebrow">Étudiant Data & IA</p>
+              <h1>N'tcho Phanuel Eliel Koné</h1>
+              <p className="hero-copy">
+                Futur Data Analyst ou Data Scientist, je transforme les données
+                en analyses claires, tableaux de bord utiles et modèles
+                prédictifs compréhensibles.
+              </p>
+              <div className="hero-badges" aria-label="Domaines principaux">
+                <span>Data Analysis</span>
+                <span>Machine Learning</span>
+                <span>Cloud AWS</span>
+              </div>
+              <div className="hero-actions" aria-label="Actions principales">
+                <a className="primary-action" href="#projets">
+                  Voir mes projets
+                </a>
+                <a className="secondary-action" href="#contact">
+                  Me contacter
+                </a>
+              </div>
+            </div>
+
+            <div className="hero-portrait" aria-label="Portrait professionnel">
+              <div className="portrait-frame">
+                <img
+                  src={profilePhoto}
+                  alt="Portrait de N'tcho Phanuel Eliel Koné"
+                />
+              </div>
+              <div className="hero-floating-card hero-floating-card-left">
+                <span>Pipeline</span>
+                <strong>Python + SQL</strong>
+              </div>
+              <div className="hero-floating-card hero-floating-card-right">
+                <span>Certification</span>
+                <strong>AWS</strong>
+              </div>
             </div>
           </div>
         </section>
@@ -200,12 +224,6 @@ function App() {
             <h2>Un profil junior orienté décision et impact métier.</h2>
           </div>
           <div className="profile-grid">
-            <figure className="profile-photo-card">
-              <img
-                src={profilePhoto}
-                alt="Portrait de N'tcho Phanuel Eliel Koné"
-              />
-            </figure>
             <div className="profile-copy">
               <p>
                 Je suis étudiant en Data & Intelligence Artificielle, orienté Data
