@@ -196,5 +196,7 @@ export const education = [
     title: 'Développeur Data & IA',
     organization: 'ECE Paris',
     logo: logoEce,
+    logoBackground: '#007179',
+    logoClassName: 'size-24',
   },
 ]

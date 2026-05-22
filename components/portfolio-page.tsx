@@ -458,17 +458,20 @@ function EducationSection() {
         <div className="grid gap-5 md:grid-cols-2">
           {education.map((item, index) => (
             <MotionReveal key={item.title} delay={index * 0.08}>
-              <Card className="group relative h-full overflow-hidden p-6 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.075]">
+              <Card className="group relative h-full min-h-[168px] overflow-hidden p-6 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.075] sm:p-7">
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent" />
-                <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-                  <div className="grid h-24 w-32 shrink-0 place-items-center rounded-2xl border border-white/10 bg-white p-4 shadow-2xl shadow-black/20">
+                <div className="flex h-full flex-col gap-6 sm:flex-row sm:items-center">
+                  <div
+                    className="grid size-28 shrink-0 place-items-center rounded-2xl border border-white/10 bg-white p-3 shadow-2xl shadow-black/20"
+                    style={{ backgroundColor: item.logoBackground ?? '#ffffff' }}
+                  >
                     <Image
                       src={item.logo}
                       alt={`Logo ${item.organization}`}
-                      className="max-h-full w-auto object-contain"
+                      className={`${item.logoClassName ?? 'size-[88px]'} object-contain`}
                     />
                   </div>
-                  <div>
+                  <div className="flex flex-1 flex-col justify-center sm:min-h-28">
                     <Badge className="border-cyan-300/20 bg-cyan-300/10 text-cyan-100">
                       {item.period}
                     </Badge>
