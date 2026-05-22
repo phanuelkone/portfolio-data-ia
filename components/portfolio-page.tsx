@@ -399,16 +399,6 @@ function ExperienceSection() {
             </MotionReveal>
           ))}
         </div>
-
-        <div className="mt-5 grid gap-5 md:grid-cols-2">
-          {education.map((item) => (
-            <Card key={item.title} className="p-6">
-              <p className="text-sm font-medium text-cyan-200">{item.period}</p>
-              <h3 className="mt-2 text-xl font-semibold text-white">{item.title}</h3>
-              <p className="mt-2 text-sm text-zinc-400">{item.organization}</p>
-            </Card>
-          ))}
-        </div>
       </div>
     </section>
   )
@@ -447,6 +437,53 @@ function CertificationSection() {
             </div>
           </Card>
         </MotionReveal>
+      </div>
+    </section>
+  )
+}
+
+function EducationSection() {
+  return (
+    <section
+      id="formation"
+      className="border-y border-white/10 bg-white/[0.025] px-4 py-24 sm:px-6 lg:px-8"
+    >
+      <div className="mx-auto max-w-7xl">
+        <SectionHeader
+          eyebrow="Formation"
+          title="Écoles & parcours académique."
+          description="Une formation orientée ingénierie, data science et intelligence artificielle, présentée avec les logos des écoles pour une lecture plus claire."
+        />
+
+        <div className="grid gap-5 md:grid-cols-2">
+          {education.map((item, index) => (
+            <MotionReveal key={item.title} delay={index * 0.08}>
+              <Card className="group relative h-full overflow-hidden p-6 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.075]">
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent" />
+                <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
+                  <div className="grid h-24 w-32 shrink-0 place-items-center rounded-2xl border border-white/10 bg-white p-4 shadow-2xl shadow-black/20">
+                    <Image
+                      src={item.logo}
+                      alt={`Logo ${item.organization}`}
+                      className="max-h-full w-auto object-contain"
+                    />
+                  </div>
+                  <div>
+                    <Badge className="border-cyan-300/20 bg-cyan-300/10 text-cyan-100">
+                      {item.period}
+                    </Badge>
+                    <h3 className="mt-4 text-2xl font-semibold tracking-tight text-white">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-zinc-400">
+                      {item.organization}
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            </MotionReveal>
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -540,6 +577,7 @@ export function PortfolioPage() {
           <ProjectsSection />
           <ExperienceSection />
           <CertificationSection />
+          <EducationSection />
         </main>
         <ContactSection />
       </div>

@@ -1,5 +1,7 @@
 import type { StaticImageData } from 'next/image'
 import excelLogo from '@/src/assets/excel-logo.svg'
+import logoEce from '@/src/assets/logo-ece.jpg'
+import logoEsilv from '@/src/assets/logo-esilv.png'
 import logo2ist from '@/src/assets/logo-2ist.png'
 import logoMtn from '@/src/assets/logo-mtn.png'
 import pentahoLogo from '@/src/assets/pentaho-logo.png'
@@ -18,7 +20,7 @@ export const profile = {
   headline:
     'Je conçois des pipelines data, dashboards KPI et modèles prédictifs pour transformer des données brutes en décisions claires.',
   shortPitch:
-    'Étudiant en MSc Data Management à l’ESILV, orienté Data Analyst / Data Scientist, avec une expérience Data Scientist chez MTN et des projets ETL, recommandation et machine learning.',
+    'Étudiant en MSc Computer Science & Data Science à l’ESILV, orienté Data Analyst / Data Scientist, avec une expérience Data Scientist chez MTN et des projets ETL, recommandation et machine learning.',
 }
 
 export const navItems = [
@@ -27,6 +29,7 @@ export const navItems = [
   { label: 'Projets', href: '#projets' },
   { label: 'Expérience', href: '#experience' },
   { label: 'Certification', href: '#certification' },
+  { label: 'Formation', href: '#formation' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -34,7 +37,7 @@ export const heroStats = [
   { value: '2', label: 'expériences pro' },
   { value: '3', label: 'projets data/IA' },
   { value: 'AWS', label: 'badge Credly' },
-  { value: 'MSc', label: 'Data Management' },
+  { value: 'MSc', label: 'CS & Data Science' },
 ]
 
 export const recruiterFacts = [
@@ -184,12 +187,14 @@ export const experiences = [
 export const education = [
   {
     period: 'MSc 1',
-    title: 'Data Management',
+    title: 'Computer Science & Data Science',
     organization: 'ESILV Paris',
+    logo: logoEsilv,
   },
   {
     period: 'Bachelor',
     title: 'Développeur Data & IA',
     organization: 'ECE Paris',
+    logo: logoEce,
   },
 ]
