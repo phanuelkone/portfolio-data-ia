@@ -800,6 +800,23 @@
   font-size: 20px;
 }
 
+.timeline-heading {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.timeline-heading img {
+  width: 92px;
+  height: 64px;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+  background: #ffffff;
+}
+
 .timeline-heading strong {
   display: block;
   margin-top: 7px;
@@ -1091,6 +1108,15 @@
   .timeline-item {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+
+  .timeline-heading {
+    grid-template-columns: 82px minmax(0, 1fr);
+  }
+
+  .timeline-heading img {
+    width: 82px;
+    height: 58px;
   }
 
   .contact-section {

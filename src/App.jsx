@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import excelLogo from './assets/excel-logo.svg'
 import heroImg from './assets/hero.png'
+import logo2ist from './assets/logo-2ist.png'
+import logoMtn from './assets/logo-mtn.png'
 import pentahoLogo from './assets/pentaho-logo.png'
 import powerBiLogo from './assets/powerbi-logo.svg'
 import profilePhoto from './assets/profile-photo.jpeg'
@@ -152,6 +154,7 @@ const experiences = [
     period: 'Mai 2025 - Août 2025',
     title: 'Stagiaire Data Scientist',
     organization: 'MTN, Côte d’Ivoire',
+    logo: logoMtn,
     items: [
       'Développement de pipelines de traitement de données avec Python et SQL',
       'Nettoyage, structuration et amélioration de la qualité des données',
@@ -163,6 +166,7 @@ const experiences = [
     period: 'Juillet 2023 - Août 2023',
     title: 'Stagiaire Développeur',
     organization: '2IST',
+    logo: logo2ist,
     items: [
       'Refonte d’interfaces utilisateurs avec HTML, CSS et Bootstrap',
       'Amélioration de l’expérience utilisateur (UX) et optimisation du design',
@@ -405,8 +409,11 @@ function App() {
               <article className="timeline-item" key={step.title}>
                 <span>{step.period}</span>
                 <div className="timeline-heading">
-                  <h3>{step.title}</h3>
-                  <strong>{step.organization}</strong>
+                  <img src={step.logo} alt={`Logo ${step.organization}`} />
+                  <div>
+                    <h3>{step.title}</h3>
+                    <strong>{step.organization}</strong>
+                  </div>
                 </div>
                 <ul>
                   {step.items.map((item) => (
