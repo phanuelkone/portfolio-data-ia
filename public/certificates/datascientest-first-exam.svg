@@ -1,0 +1,32 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="520" rx="34" fill="#0F172A"/>
+  <rect x="1" y="1" width="798" height="518" rx="33" stroke="url(#border)" stroke-opacity="0.75" stroke-width="2"/>
+  <path d="M0 0H800V520H0V0Z" fill="url(#grid)" opacity="0.18"/>
+  <circle cx="666" cy="88" r="4" fill="#38BDF8"/>
+  <circle cx="708" cy="138" r="3" fill="#7DD3FC"/>
+  <circle cx="98" cy="404" r="3" fill="#38BDF8"/>
+  <path d="M92 128H708" stroke="#38BDF8" stroke-opacity="0.28"/>
+  <text x="92" y="94" fill="#38BDF8" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="5">CERTIFICATE</text>
+  <text x="92" y="185" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800">DataScientest</text>
+  <text x="92" y="239" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800">First Exam</text>
+  <text x="92" y="305" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="22">Issued by DataScientest</text>
+  <text x="92" y="342" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="18">December 2024</text>
+  <rect x="92" y="388" width="116" height="38" rx="19" fill="#38BDF8" fill-opacity="0.13" stroke="#38BDF8" stroke-opacity="0.35"/>
+  <text x="121" y="413" fill="#BAE6FD" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Python</text>
+  <rect x="220" y="388" width="156" height="38" rx="19" fill="#38BDF8" fill-opacity="0.13" stroke="#38BDF8" stroke-opacity="0.35"/>
+  <text x="250" y="413" fill="#BAE6FD" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Data Analysis</text>
+  <rect x="388" y="388" width="174" height="38" rx="19" fill="#38BDF8" fill-opacity="0.13" stroke="#38BDF8" stroke-opacity="0.35"/>
+  <text x="416" y="413" fill="#BAE6FD" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Machine Learning</text>
+  <path d="M604 238L660 182L716 238L660 294L604 238Z" fill="#38BDF8" fill-opacity="0.1" stroke="#38BDF8" stroke-opacity="0.65" stroke-width="2"/>
+  <path d="M635 238L656 259L688 217" stroke="#E0F2FE" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" stroke="#38BDF8" stroke-opacity="0.45"/>
+    </pattern>
+    <linearGradient id="border" x1="0" y1="0" x2="800" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset="0.55" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+</svg>

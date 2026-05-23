@@ -28,7 +28,7 @@ export const navItems = [
   { label: 'Compétences', href: '#competences' },
   { label: 'Projets', href: '#projets' },
   { label: 'Expérience', href: '#experience' },
-  { label: 'Certification', href: '#certification' },
+  { label: 'Certifications', href: '#certification' },
   { label: 'Formation', href: '#formation' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -36,7 +36,7 @@ export const navItems = [
 export const heroStats = [
   { value: '2', label: 'expériences pro' },
   { value: '3', label: 'projets data/IA' },
-  { value: 'AWS', label: 'badge Credly' },
+  { value: '3', label: 'certifications' },
   { value: 'MSc', label: 'CS & Data Science' },
 ]
 
@@ -156,6 +156,33 @@ export const projects = [
       'Traitement de données massives, datasets ML et modèles de classification/régression pour analyser les performances.',
     stack: ['Python', 'Spark', 'Machine Learning'],
     impact: 'Datasets ML exploitables',
+  },
+]
+
+export const certifications = [
+  {
+    title: 'DataScientest First Exam',
+    organization: 'DataScientest',
+    issued: 'December 2024',
+    preview: '/certificates/datascientest-first-exam.svg',
+    certificateUrl: '/certificates/datascientest-first-exam.pdf',
+    skills: ['Python', 'Machine Learning', 'Data Analysis', 'Pandas'],
+  },
+  {
+    title: 'Programming for DS TechAway niv2',
+    organization: 'TechAway',
+    issued: 'December 2024',
+    preview: '/certificates/programming-ds-techaway-niv2.svg',
+    certificateUrl: '/certificates/programming-ds-techaway-niv2.pdf',
+    skills: ['Python', 'Pandas', 'Scikit-learn', 'Machine Learning'],
+  },
+  {
+    title: 'SQL TechAway niv2',
+    organization: 'TechAway',
+    issued: 'December 2024',
+    preview: '/certificates/sql-techaway-niv2.svg',
+    certificateUrl: '/certificates/sql-techaway-niv2.pdf',
+    skills: ['SQL', 'Data Analysis', 'Power BI'],
   },
 ]
 

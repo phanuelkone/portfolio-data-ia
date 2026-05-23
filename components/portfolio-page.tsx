@@ -15,12 +15,13 @@ import {
 } from 'lucide-react'
 import Image, { type StaticImageData } from 'next/image'
 import profilePhoto from '@/src/assets/profile-photo.jpeg'
-import { CredlyBadge, credlyBadgeUrl } from '@/components/credly-badge'
+import { credlyBadgeUrl } from '@/components/credly-badge'
 import { MotionReveal } from '@/components/motion-reveal'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import {
+  certifications,
   education,
   experiences,
   heroStats,
@@ -308,32 +309,43 @@ function ProjectsSection() {
         <div className="grid gap-5 lg:grid-cols-3">
           {projects.map((project, index) => (
             <MotionReveal key={project.title} delay={index * 0.08}>
-              <Card className="relative h-full overflow-hidden p-6 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.075]">
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent" />
-                <div className="flex items-center justify-between gap-4">
-                  <Badge className="text-cyan-200">{project.type}</Badge>
-                  <BarChart3 className="text-zinc-500" size={22} aria-hidden="true" />
-                </div>
-                <h3 className="mt-8 text-2xl font-semibold tracking-tight text-white">
-                  {project.title}
-                </h3>
-                <p className="mt-4 text-sm leading-7 text-zinc-400">
-                  {project.description}
-                </p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {project.stack.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-zinc-300"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-                <div className="mt-8 rounded-2xl border border-emerald-400/15 bg-emerald-400/10 p-4 text-sm font-medium text-emerald-100">
-                  {project.impact}
-                </div>
-              </Card>
+              <motion.article
+                whileHover={{ y: -8, scale: 1.01 }}
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                className="h-full"
+              >
+                <Card className="group relative h-full overflow-hidden p-6 hover:border-cyan-300/30 hover:bg-white/[0.075]">
+                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(56,189,248,0.14),transparent_44%,rgba(37,99,235,0.1))] opacity-0 transition duration-500 group-hover:opacity-100" />
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent" />
+                  <div className="relative flex items-center justify-between gap-4">
+                    <Badge className="text-cyan-200">{project.type}</Badge>
+                    <BarChart3
+                      className="text-zinc-500 transition group-hover:text-cyan-200"
+                      size={22}
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <h3 className="relative mt-8 text-2xl font-semibold tracking-tight text-white">
+                    {project.title}
+                  </h3>
+                  <p className="relative mt-4 text-sm leading-7 text-zinc-400">
+                    {project.description}
+                  </p>
+                  <div className="relative mt-6 flex flex-wrap gap-2">
+                    {project.stack.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-zinc-300"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="relative mt-8 rounded-2xl border border-emerald-400/15 bg-emerald-400/10 p-4 text-sm font-medium text-emerald-100">
+                    {project.impact}
+                  </div>
+                </Card>
+              </motion.article>
             </MotionReveal>
           ))}
         </div>
@@ -406,37 +418,103 @@ function ExperienceSection() {
 
 function CertificationSection() {
   return (
-    <section id="certification" className="px-4 py-24 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeader
-          eyebrow="Certification"
-          title="Badge AWS vérifiable, intégré dans un profil data cloud-ready."
-          description="La certification renforce la crédibilité cloud du profil et donne un signal rapide aux recruteurs."
-        />
+    <section
+      id="certification"
+      className="relative overflow-hidden px-4 py-24 sm:px-6 lg:px-8"
+    >
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(15,23,42,0)_0%,rgba(15,23,42,0.52)_45%,rgba(15,23,42,0)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        {[
+          'left-[8%] top-24',
+          'left-[18%] bottom-28',
+          'right-[16%] top-32',
+          'right-[8%] bottom-20',
+        ].map((position) => (
+          <span
+            key={position}
+            className={`absolute ${position} size-1.5 rounded-[3px] bg-cyan-300/70 shadow-[0_0_18px_rgba(56,189,248,0.7)]`}
+          />
+        ))}
+      </div>
 
-        <MotionReveal>
-          <Card className="grid items-center gap-8 p-6 md:grid-cols-[1fr_220px] md:p-8">
-            <div>
-              <Badge className="border-amber-300/20 bg-amber-300/10 text-amber-200">
-                AWS / Credly
-              </Badge>
-              <h3 className="mt-5 text-3xl font-semibold text-white">
-                Certification cloud officielle
-              </h3>
-              <p className="mt-4 max-w-2xl text-zinc-400">
-                Badge officiel Credly lié à mon parcours cloud, en complément de
-                mon profil Data & IA.
-              </p>
-              <Button href={credlyBadgeUrl} target="_blank" className="mt-6">
-                Vérifier sur Credly
-                <ArrowUpRight size={17} aria-hidden="true" />
-              </Button>
-            </div>
-            <div className="grid justify-start md:justify-center">
-              <CredlyBadge />
-            </div>
-          </Card>
+      <div className="mx-auto max-w-7xl">
+        <MotionReveal className="mx-auto mb-12 max-w-3xl text-center">
+          <Badge className="mb-4 border-cyan-400/20 bg-cyan-400/10 text-cyan-200">
+            Certifications
+          </Badge>
+          <h2 className="text-balance bg-gradient-to-r from-white via-cyan-100 to-sky-300 bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-5xl">
+            Certifications data qui renforcent la crédibilité technique.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-pretty text-base leading-7 text-zinc-400 sm:text-lg">
+            Des badges orientés Python, SQL, machine learning et analyse de
+            données, présentés avec aperçu, compétences et lien direct vers le
+            certificat.
+          </p>
         </MotionReveal>
+
+        <div className="grid gap-5 lg:grid-cols-3">
+          {certifications.map((certificate, index) => (
+            <MotionReveal key={certificate.title} delay={index * 0.08}>
+              <motion.article
+                whileHover={{ y: -8, scale: 1.01 }}
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                className="h-full"
+              >
+                <Card className="group relative h-full overflow-hidden p-3 hover:border-cyan-300/35 hover:bg-white/[0.075]">
+                  <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(56,189,248,0.18),transparent_42%,rgba(37,99,235,0.12))] opacity-0 transition duration-500 group-hover:opacity-100" />
+                  <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent" />
+
+                  <div className="relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-slate-950">
+                    <Image
+                      src={certificate.preview}
+                      alt={`Aperçu du certificat ${certificate.title}`}
+                      width={800}
+                      height={520}
+                      className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-[1.035]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent" />
+                  </div>
+
+                  <div className="relative p-4 sm:p-5">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Badge className="border-cyan-300/20 bg-cyan-300/10 text-cyan-100">
+                        {certificate.organization}
+                      </Badge>
+                      <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs font-medium text-zinc-400">
+                        {certificate.issued}
+                      </span>
+                    </div>
+
+                    <h3 className="mt-5 text-2xl font-semibold tracking-tight text-white">
+                      {certificate.title}
+                    </h3>
+
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {certificate.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="rounded-full border border-sky-300/15 bg-sky-300/10 px-3 py-1 text-xs font-medium text-sky-100"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+
+                    <Button
+                      href={certificate.certificateUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-6 w-full"
+                    >
+                      View Certificate
+                      <ArrowUpRight size={17} aria-hidden="true" />
+                    </Button>
+                  </div>
+                </Card>
+              </motion.article>
+            </MotionReveal>
+          ))}
+        </div>
       </div>
     </section>
   )
