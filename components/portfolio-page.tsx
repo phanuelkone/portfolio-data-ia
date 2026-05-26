@@ -15,7 +15,7 @@ import {
 } from 'lucide-react'
 import Image, { type StaticImageData } from 'next/image'
 import profilePhoto from '@/src/assets/profile-photo.jpeg'
-import { credlyBadgeUrl } from '@/components/credly-badge'
+import { CredlyBadge, credlyBadgeUrl } from '@/components/credly-badge'
 import { MotionReveal } from '@/components/motion-reveal'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -24,6 +24,7 @@ import {
   certifications,
   education,
   experiences,
+  featuredCertification,
   heroStats,
   navItems,
   profile,
@@ -440,16 +441,78 @@ function CertificationSection() {
       <div className="mx-auto max-w-7xl">
         <MotionReveal className="mx-auto mb-12 max-w-3xl text-center">
           <Badge className="mb-4 border-cyan-400/20 bg-cyan-400/10 text-cyan-200">
-            Certifications
+            Certifications & Badges
           </Badge>
           <h2 className="text-balance bg-gradient-to-r from-white via-cyan-100 to-sky-300 bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-5xl">
-            Certifications data qui renforcent la crédibilité technique.
+            Certifications & Badges
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-base leading-7 text-zinc-400 sm:text-lg">
-            Des badges orientés Python, SQL, machine learning et analyse de
-            données, présentés avec aperçu, compétences et lien direct vers le
-            certificat.
+            Verified credentials in Cloud, Data and AI.
           </p>
+        </MotionReveal>
+
+        <MotionReveal>
+          <motion.article
+            whileHover={{ y: -8, scale: 1.005 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-6"
+          >
+            <Card className="group relative overflow-hidden border-amber-300/25 bg-[#111827]/80 p-5 shadow-[0_30px_120px_rgba(255,153,0,0.12)] hover:border-amber-300/45 hover:bg-white/[0.075] sm:p-7">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_10%,rgba(255,153,0,0.24),transparent_30%),radial-gradient(circle_at_82%_8%,rgba(139,92,246,0.22),transparent_32%),linear-gradient(135deg,rgba(56,189,248,0.12),transparent_50%)] opacity-90 transition duration-700 group-hover:opacity-100" />
+              <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#ff9900] to-transparent" />
+              <div className="pointer-events-none absolute -right-20 -top-24 size-64 rounded-full bg-[#ff9900]/10 blur-3xl transition duration-700 group-hover:bg-[#ff9900]/20" />
+
+              <div className="relative grid gap-8 lg:grid-cols-[1fr_320px] lg:items-center">
+                <div>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <Badge className="border-amber-300/30 bg-amber-300/10 text-amber-100">
+                      {featuredCertification.label}
+                    </Badge>
+                    <span className="rounded-full border border-violet-300/20 bg-violet-300/10 px-3 py-1 text-xs font-medium text-violet-100">
+                      AWS / Credly
+                    </span>
+                  </div>
+
+                  <h3 className="mt-6 max-w-3xl text-balance text-3xl font-semibold tracking-tight text-white sm:text-5xl">
+                    {featuredCertification.title}
+                  </h3>
+                  <p className="mt-4 text-base text-zinc-300 sm:text-lg">
+                    {featuredCertification.organization} · {featuredCertification.issued}
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {featuredCertification.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-full border border-amber-300/20 bg-amber-300/10 px-3 py-1 text-xs font-medium text-amber-50"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+
+                  <Button
+                    href={featuredCertification.certificateUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-7 bg-[#ff9900] !text-zinc-950 shadow-[0_0_44px_rgba(255,153,0,0.2)] hover:bg-amber-300"
+                  >
+                    View AWS Badge
+                    <ArrowUpRight size={17} aria-hidden="true" />
+                  </Button>
+                </div>
+
+                <div className="grid justify-start lg:justify-center">
+                  <div className="relative rounded-[2rem] border border-white/10 bg-slate-950/80 p-5 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-2xl">
+                    <div className="absolute inset-0 rounded-[2rem] bg-[linear-gradient(135deg,rgba(255,153,0,0.14),transparent_44%,rgba(139,92,246,0.16))]" />
+                    <div className="relative grid min-h-[300px] min-w-[190px] place-items-center">
+                      <CredlyBadge />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </motion.article>
         </MotionReveal>
 
         <div className="grid gap-5 lg:grid-cols-3">

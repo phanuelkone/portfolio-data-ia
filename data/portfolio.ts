@@ -36,7 +36,7 @@ export const navItems = [
 export const heroStats = [
   { value: '2', label: 'expériences pro' },
   { value: '3', label: 'projets data/IA' },
-  { value: '3', label: 'certifications' },
+  { value: '4', label: 'certifications' },
   { value: 'MSc', label: 'CS & Data Science' },
 ]
 
@@ -158,6 +158,16 @@ export const projects = [
     impact: 'Datasets ML exploitables',
   },
 ]
+
+export const featuredCertification = {
+  label: 'Featured Certification',
+  title: 'AWS Academy Machine Learning Foundations',
+  organization: 'AWS Academy / Credly',
+  issued: 'Verified credential',
+  certificateUrl:
+    'https://www.credly.com/badges/c0069127-cda3-40b9-b911-7732e1541e0b/public_url',
+  skills: ['AWS', 'Cloud', 'Data', 'Machine Learning'],
+}
 
 export const certifications = [
   {
