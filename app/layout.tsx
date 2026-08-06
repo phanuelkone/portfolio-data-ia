@@ -4,19 +4,23 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL('https://portfolio-data-ia.vercel.app'),
   title: {
-    default: "N'tcho Phanuel Eliel Koné | Data & AI Portfolio",
+    default:
+      "N'tcho Phanuel Eliel Koné | Data Analyst, Data Scientist & Business Analyst",
     template: "%s | N'tcho Phanuel Eliel Koné",
   },
   description:
-    "Portfolio premium Data & IA de N'tcho Phanuel Eliel Koné : projets ETL, machine learning, dashboards KPI, expérience Data Scientist et certification AWS.",
+    "Portfolio premium Data & IA de N'tcho Phanuel Eliel Koné : projets ETL, dashboards Power BI, SQL, machine learning, expériences professionnelles et certifications Cloud/Data.",
   keywords: [
     'Data Analyst',
     'Data Scientist',
-    'AI Engineer',
+    'Business Analyst',
+    'AI Portfolio',
     'Python',
     'SQL',
     'Power BI',
     'Machine Learning',
+    'ETL',
+    'AWS',
     'Portfolio Data IA',
   ],
   authors: [{ name: "N'tcho Phanuel Eliel Koné" }],
@@ -24,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "N'tcho Phanuel Eliel Koné | Data & AI Portfolio",
     description:
-      'Projets data, pipelines ETL, dashboards KPI, machine learning et expérience professionnelle.',
+      'Portfolio Data & IA orienté décision métier : pipelines ETL, dashboards KPI, SQL, machine learning et certifications.',
     url: 'https://portfolio-data-ia.vercel.app/',
     siteName: "N'tcho Phanuel Eliel Koné",
     locale: 'fr_FR',
@@ -34,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "N'tcho Phanuel Eliel Koné | Data & AI Portfolio",
     description:
-      'Portfolio Data & IA orienté décision métier, machine learning et dashboards.',
+      'Portfolio Data & IA orienté décision métier, Business Intelligence et machine learning.',
   },
   icons: {
     icon: '/favicon.svg',
@@ -46,13 +50,14 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  category: 'technology',
 }
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   colorScheme: 'dark',
-  themeColor: '#09090b',
+  themeColor: '#0f172a',
 }
 
 export default function RootLayout({

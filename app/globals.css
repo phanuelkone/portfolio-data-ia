@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source not "../kmeans-presentation/**";
 
 :root {
   color-scheme: dark;
@@ -11,7 +12,7 @@
 }
 
 html {
-  scroll-padding-top: 88px;
+  scroll-padding-top: 116px;
 }
 
 body {
@@ -25,6 +26,12 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 88px;
+  }
 }
 
 a {

@@ -3,7 +3,13 @@ import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
   {
-    ignores: ['.next/**', 'dist/**', 'node_modules/**', 'next-env.d.ts'],
+    ignores: [
+      '.next/**',
+      'dist/**',
+      'node_modules/**',
+      'next-env.d.ts',
+      'kmeans-presentation/**',
+    ],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,

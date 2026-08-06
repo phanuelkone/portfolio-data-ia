@@ -11,24 +11,25 @@ const iconBase = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons'
 
 export const profile = {
   name: "N'tcho Phanuel Eliel Koné",
-  role: 'Data & AI Engineer in training',
+  role: 'Data Analyst | Data Scientist | Business Analyst',
   location: 'Paris, France',
   email: 'phanuelkone1@gmail.com',
   linkedin:
     'https://www.linkedin.com/in/n%E2%80%99tcho-phanuel-eliel-kon%C3%A9-337931261/',
   github: 'https://github.com/phanuelkone',
+  cvUrl: '/cv-ntcho-phanuel-kone.pdf',
   headline:
-    'Je conçois des pipelines data, dashboards KPI et modèles prédictifs pour transformer des données brutes en décisions claires.',
+    'Je transforme des données brutes en analyses claires, dashboards KPI et modèles prédictifs utiles pour la décision métier.',
   shortPitch:
-    'Étudiant en MSc Computer Science & Data Science à l’ESILV, orienté Data Analyst / Data Scientist, avec une expérience Data Scientist chez MTN et des projets ETL, recommandation et machine learning.',
+    'Étudiant en MSc Computer Science & Data Science à l’ESILV, je construis des pipelines data, des visualisations BI et des modèles machine learning avec une approche orientée impact business.',
 }
 
 export const navItems = [
+  { label: 'Accueil', href: '#accueil' },
   { label: 'Profil', href: '#profil' },
   { label: 'Compétences', href: '#competences' },
   { label: 'Projets', href: '#projets' },
-  { label: 'Expérience', href: '#experience' },
-  { label: 'Certifications', href: '#certification' },
+  { label: 'Expériences', href: '#experience' },
   { label: 'Formation', href: '#formation' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -36,15 +37,15 @@ export const navItems = [
 export const heroStats = [
   { value: '2', label: 'expériences pro' },
   { value: '3', label: 'projets data/IA' },
-  { value: '4', label: 'certifications' },
-  { value: 'MSc', label: 'CS & Data Science' },
+  { value: '5', label: 'certifications' },
+  { value: '20+', label: 'technologies' },
 ]
 
 export const recruiterFacts = [
-  'Disponible pour stage, alternance ou mission data',
-  'Python, SQL, Power BI, Pandas, Scikit-learn',
-  'Expérience Data Scientist chez MTN',
-  'Culture dashboard, KPI, pipeline ETL et ML',
+  'Cible : Data Analyst, Data Scientist ou Business Analyst',
+  'Stack principal : Python, SQL, Power BI, Pandas, Scikit-learn',
+  'Expérience Data Scientist chez MTN avec pipelines, KPI et churn',
+  'Approche orientée dashboard, qualité des données et recommandations métiers',
 ]
 
 type SkillLogo = string | StaticImageData
@@ -52,53 +53,60 @@ type SkillLogo = string | StaticImageData
 export const skillGroups: Array<{
   eyebrow: string
   title: string
-  items?: Array<{ name: string; mark: string; logo?: SkillLogo }>
-  methods?: string[]
+  items: Array<{ name: string; mark: string; logo?: SkillLogo }>
 }> = [
   {
-    eyebrow: 'Programming',
-    title: 'Languages',
+    eyebrow: 'Data Analysis',
+    title: 'Analyse & préparation',
     items: [
       { name: 'Python', mark: 'Py', logo: `${iconBase}/python/python-original.svg` },
       { name: 'SQL', mark: 'SQL' },
-      { name: 'Java', mark: 'Jv', logo: `${iconBase}/java/java-original.svg` },
-    ],
-  },
-  {
-    eyebrow: 'Data & IA',
-    title: 'Libraries',
-    items: [
       { name: 'Pandas', mark: 'Pd', logo: `${iconBase}/pandas/pandas-original.svg` },
       { name: 'NumPy', mark: 'Np', logo: `${iconBase}/numpy/numpy-original.svg` },
-      {
-        name: 'Scikit-learn',
-        mark: 'SK',
-        logo: `${iconBase}/scikitlearn/scikitlearn-original.svg`,
-      },
-      {
-        name: 'TensorFlow',
-        mark: 'TF',
-        logo: `${iconBase}/tensorflow/tensorflow-original.svg`,
-      },
+      { name: 'Excel', mark: 'XLS', logo: excelLogo },
     ],
   },
   {
-    eyebrow: 'Visualization',
-    title: 'Business insight',
+    eyebrow: 'Data Visualisation',
+    title: 'Dashboards & reporting',
     items: [
       { name: 'Power BI', mark: 'BI', logo: powerBiLogo },
+      { name: 'Tableau', mark: 'Tb', logo: `${iconBase}/tableau/tableau-original.svg` },
+      { name: 'DAX', mark: 'DAX' },
+      { name: 'Power Query', mark: 'PQ' },
       {
         name: 'Matplotlib',
         mark: 'Mp',
         logo: `${iconBase}/matplotlib/matplotlib-original.svg`,
       },
-      { name: 'Excel', mark: 'XLS', logo: excelLogo },
     ],
   },
   {
-    eyebrow: 'Database',
-    title: 'Systems',
+    eyebrow: 'Data Science',
+    title: 'Modèles & statistiques',
     items: [
+      {
+        name: 'Scikit-learn',
+        mark: 'SK',
+        logo: `${iconBase}/scikitlearn/scikitlearn-original.svg`,
+      },
+      { name: 'Statistiques', mark: 'Σ' },
+      { name: 'Machine Learning', mark: 'ML' },
+      {
+        name: 'TensorFlow',
+        mark: 'TF',
+        logo: `${iconBase}/tensorflow/tensorflow-original.svg`,
+      },
+      { name: 'Feature engineering', mark: 'FE' },
+    ],
+  },
+  {
+    eyebrow: 'Data Engineering',
+    title: 'Pipelines & données',
+    items: [
+      { name: 'ETL', mark: 'ETL' },
+      { name: 'API', mark: 'API' },
+      { name: 'Automatisation', mark: 'Auto' },
       { name: 'MySQL', mark: 'My', logo: `${iconBase}/mysql/mysql-original.svg` },
       {
         name: 'SQL Server',
@@ -108,54 +116,90 @@ export const skillGroups: Array<{
     ],
   },
   {
-    eyebrow: 'Workflow',
-    title: 'Tools',
+    eyebrow: 'Business Analysis',
+    title: 'KPI & décision métier',
+    items: [
+      { name: 'KPI', mark: 'KPI' },
+      { name: 'Reporting', mark: 'Rpt' },
+      { name: 'Analyse des besoins', mark: 'Need' },
+      { name: 'Recommandations métiers', mark: 'Reco' },
+      { name: 'Churn prediction', mark: 'Churn' },
+    ],
+  },
+  {
+    eyebrow: 'Outils',
+    title: 'Workflow & cloud',
     items: [
       { name: 'Git', mark: 'Git', logo: `${iconBase}/git/git-original.svg` },
       { name: 'GitHub', mark: 'GH', logo: `${iconBase}/github/github-original.svg` },
       { name: 'Pentaho', mark: 'P', logo: pentahoLogo },
-    ],
-  },
-  {
-    eyebrow: 'Methods',
-    title: 'Data science',
-    methods: [
-      'EDA',
-      'ETL pipelines',
-      'Feature engineering',
-      'Classification',
-      'Regression',
-      'Clustering',
-      'KPI analysis',
-      'Churn prediction',
+      {
+        name: 'AWS',
+        mark: 'AWS',
+        logo: `${iconBase}/amazonwebservices/amazonwebservices-original-wordmark.svg`,
+      },
+      { name: 'Azure', mark: 'Az', logo: `${iconBase}/azure/azure-original.svg` },
+      { name: 'Jira', mark: 'Jira', logo: `${iconBase}/jira/jira-original.svg` },
     ],
   },
 ]
+
+export const projectFilters = [
+  'Tous',
+  'Data Analysis',
+  'Data Science',
+  'Business Intelligence',
+  'Business Analysis',
+] as const
 
 export const projects = [
   {
     title: 'Pipeline de données ETL',
     type: 'ETL & BI',
-    description:
-      'Pipeline complet d’ingestion, transformation, stockage SQL et visualisation pour suivre des KPI fiables.',
-    stack: ['Python', 'SQL', 'Power BI'],
-    impact: 'Automatisation des traitements',
+    categories: ['Business Intelligence', 'Business Analysis', 'Data Analysis'],
+    problem:
+      'Fiabiliser le suivi de KPI à partir de données brutes dispersées et difficiles à exploiter.',
+    data: 'Données opérationnelles, fichiers sources et tables SQL',
+    tools: ['Python', 'SQL', 'Power BI'],
+    steps: ['Ingestion', 'Transformation', 'Stockage SQL', 'Dashboard KPI'],
+    result:
+      'Traitements automatisés, données structurées et indicateurs plus faciles à suivre.',
+    kpi: 'Pipeline ETL + dashboard interactif',
+    githubUrl: 'https://github.com/phanuelkone',
+    demoUrl: '#contact',
+    demoLabel: 'Discuter du dashboard',
   },
   {
     title: 'Système de recommandation musicale',
     type: 'Machine Learning',
-    description:
-      'Moteur basé sur la similarité cosinus avec EDA, feature engineering, intégration API YouTube et visualisation.',
-    stack: ['Python', 'Pandas', 'API YouTube'],
-    impact: 'Recommandation personnalisée',
+    categories: ['Data Science', 'Data Analysis'],
+    problem:
+      'Recommander des musiques pertinentes à partir de similarités entre morceaux et signaux utilisateurs.',
+    data: 'Données musicales, features audio et API YouTube',
+    tools: ['Python', 'Pandas', 'API YouTube'],
+    steps: ['EDA', 'Feature engineering', 'Similarité cosinus', 'Visualisation'],
+    result:
+      'Moteur de recommandation interprétable avec visualisation des résultats.',
+    kpi: 'Recommandation personnalisée',
+    githubUrl: 'https://github.com/phanuelkone',
+    demoUrl: '#contact',
+    demoLabel: 'Voir la logique',
   },
   {
     title: 'Pipeline de données sportives',
     type: 'Data Science',
-    description:
-      'Traitement de données massives, datasets ML et modèles de classification/régression pour analyser les performances.',
-    stack: ['Python', 'Spark', 'Machine Learning'],
-    impact: 'Datasets ML exploitables',
+    categories: ['Data Science', 'Data Analysis'],
+    problem:
+      'Transformer des données sportives massives en datasets propres pour l’analyse et la modélisation.',
+    data: 'Données sportives volumineuses et variables de performance',
+    tools: ['Python', 'Spark', 'Machine Learning'],
+    steps: ['Nettoyage', 'Création datasets ML', 'Classification', 'Régression'],
+    result:
+      'Datasets exploitables, analyses statistiques et visualisation des performances.',
+    kpi: 'Classification + régression',
+    githubUrl: 'https://github.com/phanuelkone',
+    demoUrl: '#contact',
+    demoLabel: 'Parler du projet',
   },
 ]
 
@@ -170,6 +214,14 @@ export const featuredCertification = {
 }
 
 export const certifications = [
+  {
+    title: 'Exam - Data Analyst - Level 3 (EN)',
+    organization: 'Liora',
+    issued: 'June 9, 2026',
+    preview: '/certificates/liora-data-analyst-level-3.png',
+    certificateUrl: '/certificates/liora-data-analyst-level-3.pdf',
+    skills: ['Data Analysis', 'SQL', 'Power BI', 'Python'],
+  },
   {
     title: 'DataScientest First Exam',
     organization: 'DataScientest',
@@ -202,6 +254,8 @@ export const experiences = [
     title: 'Stagiaire Data Scientist',
     organization: 'MTN, Côte d’Ivoire',
     logo: logoMtn,
+    tools: ['Python', 'SQL', 'Power BI', 'Machine Learning'],
+    outcome: 'Dashboards KPI, pipelines data et modèles de prédiction du churn.',
     items: [
       'Développement de pipelines de traitement de données avec Python et SQL',
       'Nettoyage, structuration et amélioration de la qualité des données',
@@ -214,6 +268,8 @@ export const experiences = [
     title: 'Stagiaire Développeur',
     organization: '2IST',
     logo: logo2ist,
+    tools: ['HTML', 'CSS', 'Bootstrap', 'UX'],
+    outcome: 'Interfaces refondues avec une expérience utilisateur plus claire.',
     items: [
       'Refonte d’interfaces utilisateurs avec HTML, CSS et Bootstrap',
       'Amélioration de l’expérience utilisateur et optimisation du design',
