@@ -154,6 +154,7 @@ export const projectFilters = [
 
 export const projects = [
   {
+    slug: 'pipeline-donnees-etl',
     title: 'Pipeline de données ETL',
     type: 'ETL & BI',
     categories: ['Business Intelligence', 'Business Analysis', 'Data Analysis'],
@@ -165,11 +166,24 @@ export const projects = [
     result:
       'Traitements automatisés, données structurées et indicateurs plus faciles à suivre.',
     kpi: 'Pipeline ETL + dashboard interactif',
+    context:
+      'Projet orienté entreprise pour transformer des fichiers sources hétérogènes en tables propres, prêtes pour le reporting et le pilotage de performance.',
+    highlights: [
+      'Contrôles qualité sur les valeurs manquantes, doublons et formats incohérents',
+      'Modèle SQL simple pour consolider les indicateurs métiers',
+      'Dashboard Power BI pensé pour comparer rapidement les KPI clés',
+    ],
+    deliverables: [
+      'Script Python d’ingestion et de transformation',
+      'Schéma de tables SQL pour les données nettoyées',
+      'Maquette de dashboard KPI avec filtres et cartes de synthèse',
+    ],
     githubUrl: 'https://github.com/phanuelkone',
-    demoUrl: '#contact',
-    demoLabel: 'Discuter du dashboard',
+    demoUrl: '/projets/pipeline-donnees-etl',
+    demoLabel: 'Voir le projet',
   },
   {
+    slug: 'recommandation-musicale',
     title: 'Système de recommandation musicale',
     type: 'Machine Learning',
     categories: ['Data Science', 'Data Analysis'],
@@ -181,11 +195,24 @@ export const projects = [
     result:
       'Moteur de recommandation interprétable avec visualisation des résultats.',
     kpi: 'Recommandation personnalisée',
+    context:
+      'Projet data science pour rapprocher des morceaux selon leurs caractéristiques audio et proposer des recommandations compréhensibles.',
+    highlights: [
+      'Analyse exploratoire des features audio pour repérer les variables utiles',
+      'Calcul de similarité cosinus pour classer les morceaux proches',
+      'Restitution lisible des recommandations avec les critères qui les expliquent',
+    ],
+    deliverables: [
+      'Notebook d’EDA et de préparation des données',
+      'Fonction de recommandation basée sur les similarités',
+      'Visualisation des morceaux recommandés et de leurs scores',
+    ],
     githubUrl: 'https://github.com/phanuelkone',
-    demoUrl: '#contact',
-    demoLabel: 'Voir la logique',
+    demoUrl: '/projets/recommandation-musicale',
+    demoLabel: 'Voir le projet',
   },
   {
+    slug: 'pipeline-donnees-sportives',
     title: 'Pipeline de données sportives',
     type: 'Data Science',
     categories: ['Data Science', 'Data Analysis'],
@@ -197,9 +224,21 @@ export const projects = [
     result:
       'Datasets exploitables, analyses statistiques et visualisation des performances.',
     kpi: 'Classification + régression',
+    context:
+      'Projet orienté préparation de données et modélisation, avec un focus sur la fiabilité des datasets avant analyse sportive.',
+    highlights: [
+      'Nettoyage de données volumineuses et normalisation des variables',
+      'Construction de jeux de données prêts pour classification et régression',
+      'Lecture statistique des performances pour faciliter l’interprétation',
+    ],
+    deliverables: [
+      'Pipeline de nettoyage et de structuration',
+      'Dataset final exploitable pour machine learning',
+      'Synthèse visuelle des performances et des variables importantes',
+    ],
     githubUrl: 'https://github.com/phanuelkone',
-    demoUrl: '#contact',
-    demoLabel: 'Parler du projet',
+    demoUrl: '/projets/pipeline-donnees-sportives',
+    demoLabel: 'Voir le projet',
   },
 ]
 
