@@ -570,10 +570,10 @@ function ExperienceSection() {
           <div className="grid gap-6">
             {experiences.map((experience, index) => (
               <MotionReveal key={experience.title} delay={index * 0.08}>
-                <Card className="relative grid gap-6 p-5 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.075] sm:p-6 md:grid-cols-[116px_1fr]">
+                <Card className="relative grid gap-6 p-5 hover:-translate-y-1 hover:border-cyan-300/30 hover:bg-white/[0.075] sm:p-6 md:grid-cols-[164px_1fr]">
                   <div className="absolute left-[17px] top-8 hidden size-4 rounded-full border border-cyan-300/40 bg-cyan-300 shadow-[0_0_22px_rgba(56,189,248,0.65)] md:block" />
                   <div className="flex items-start gap-4 md:block md:pl-10">
-                    <div className="grid h-20 w-28 place-items-center rounded-2xl border border-white/10 bg-white p-3 shadow-2xl shadow-black/20">
+                    <div className="grid h-20 w-28 shrink-0 place-items-center rounded-2xl border border-white/10 bg-white p-3 shadow-2xl shadow-black/20">
                       <Image
                         src={experience.logo}
                         alt={`Logo ${experience.organization}`}
