@@ -1,0 +1,17 @@
+commande_id,date,ville,produit,quantite,prix_unitaire,client
+C001,2026-01-03,abidjan,Forfait Internet,2,15000,Entreprise A
+C002,2026-01-05, Bouake ,Carte SIM,5,1000,Client B
+C003,2026-01-06,Yamoussoukro,Telephone,1,85000,Client C
+C004,2026-01-08,Abidjan,Forfait Internet,3,"15,000",Entreprise D
+C005,2026-01-10,San Pedro,Routeur 4G,1,45000,Client E
+C006,2026-01-12,Abidjan,Carte SIM,0,1000,Client F
+C007,2026-01-14,Bouake,Telephone,2,85000,Client G
+C008,2026-01-15,Yamoussoukro,Forfait Internet,4,15000,Client H
+C008,2026-01-15,Yamoussoukro,Forfait Internet,4,15000,Client H
+C009,2026-01-18,Abidjan,Routeur 4G,1,,Client I
+C010,2026-01-20,San Pedro,Carte SIM,10,1000,Client J
+C011,mauvaise-date,Abidjan,Telephone,1,85000,Client K
+C012,2026-02-02,Abidjan,Forfait Internet,6,15000,Entreprise L
+C013,2026-02-04,Bouake,Routeur 4G,2,45000,Client M
+C014,2026-02-06,Yamoussoukro,Carte SIM,8,1000,Client N
+C015,2026-02-07,San Pedro,Telephone,1,85000,Client O

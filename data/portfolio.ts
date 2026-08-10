@@ -178,7 +178,8 @@ export const projects = [
       'Schéma de tables SQL pour les données nettoyées',
       'Maquette de dashboard KPI avec filtres et cartes de synthèse',
     ],
-    githubUrl: 'https://github.com/phanuelkone',
+    githubUrl:
+      'https://github.com/phanuelkone/portfolio-data-ia/tree/main/projects/pipeline-donnees-etl',
     demoUrl: '/projets/pipeline-donnees-etl',
     demoLabel: 'Voir le projet',
   },
