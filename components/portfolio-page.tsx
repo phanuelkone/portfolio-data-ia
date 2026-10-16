@@ -54,7 +54,7 @@ function SectionHeader({
   description?: string
 }) {
   return (
-    <MotionReveal className="mx-auto mb-12 max-w-3xl text-center">
+    <MotionReveal className="section-heading mb-12 max-w-3xl">
       <Badge className="mb-4 border-cyan-400/20 bg-cyan-400/10 text-cyan-200">
         {eyebrow}
       </Badge>
@@ -82,7 +82,7 @@ function SiteNav() {
             NK
           </span>
           <span className="hidden text-sm font-semibold text-white sm:block">
-            Portfolio Data & IA
+            Phanuel Koné <span className="brand-detail"> / Data & IA</span>
           </span>
         </a>
 
@@ -129,7 +129,7 @@ function DataSignalPanel() {
     >
       <div className="flex items-center justify-between">
         <span className="text-xs uppercase tracking-[0.28em] text-cyan-200">
-          Live data view
+          Data insights
         </span>
         <span className="size-2 rounded-full bg-emerald-300 shadow-[0_0_18px_rgba(110,231,183,0.95)]" />
       </div>
@@ -167,12 +167,12 @@ function HeroSection() {
   return (
     <section
       id="accueil"
-      className="relative overflow-hidden pt-40 sm:pt-44 lg:min-h-screen lg:pt-32"
+      className="hero-section relative overflow-hidden pt-40 sm:pt-44 lg:min-h-screen lg:pt-32"
     >
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_16%,rgba(56,189,248,0.2),transparent_31%),radial-gradient(circle_at_78%_14%,rgba(139,92,246,0.17),transparent_30%),linear-gradient(180deg,#0f172a_0%,#070A12_52%,#09090b_100%)]" />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,rgba(255,255,255,0.045)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:76px_76px] [mask-image:linear-gradient(to_bottom,black,transparent_84%)]" />
 
-      <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 pb-24 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+      <div className="hero-layout mx-auto grid w-full max-w-7xl items-center gap-12 px-4 pb-24 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24, filter: 'blur(10px)' }}
           animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -183,12 +183,13 @@ function HeroSection() {
             Disponible pour stage, alternance ou mission data
           </Badge>
 
-          <h1 className="max-w-4xl text-balance text-5xl font-semibold tracking-[-0.055em] text-white sm:text-7xl lg:text-8xl">
-            {profile.name}
+          <p className="hero-intro">N’tcho Phanuel Eliel Koné <span> / Paris, France</span></p>
+          <h1 className="hero-title">
+            La donnée.<br />
+            <span>Le sens.</span><br />
+            L’impact.
           </h1>
-          <p className="mt-5 bg-gradient-to-r from-cyan-200 via-white to-violet-200 bg-clip-text text-xl font-semibold tracking-tight text-transparent sm:text-3xl">
-            {profile.role}
-          </p>
+          <p className="hero-role">{profile.role}</p>
 
           <p className="mt-7 max-w-2xl text-pretty text-lg leading-8 text-zinc-300 sm:text-xl">
             {profile.headline}
@@ -213,7 +214,7 @@ function HeroSection() {
             </Button>
           </div>
 
-          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="hero-stats mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {heroStats.map((stat) => (
               <Card key={stat.label} className="p-4">
                 <div className="text-2xl font-semibold text-white">
@@ -225,7 +226,7 @@ function HeroSection() {
           </div>
         </motion.div>
 
-        <motion.div style={{ y }} className="relative mx-auto w-full max-w-md">
+        <motion.div style={{ y }} className="hero-portrait relative mx-auto w-full max-w-md">
           <div className="absolute -inset-8 -z-10 rounded-[3rem] bg-cyan-400/10 blur-3xl" />
           <Card className="overflow-hidden border-cyan-300/15 bg-slate-950/55 p-3">
             <div className="relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-zinc-900">
@@ -234,7 +235,7 @@ function HeroSection() {
                 alt={`Portrait de ${profile.name}`}
                 priority
                 sizes="(max-width: 1024px) 80vw, 420px"
-                className="aspect-square object-cover"
+                className="portrait-image aspect-[4/5] object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-zinc-950 via-zinc-950/72 to-transparent p-5">
                 <p className="text-lg font-semibold text-white">{profile.name}</p>
@@ -247,7 +248,7 @@ function HeroSection() {
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-[0.24em] text-cyan-200">
-                  Recruiter fit
+                  Expertise & outils
                 </p>
                 <p className="mt-1 text-sm font-medium text-white">
                   Python, SQL, Power BI, ML, AWS
@@ -258,7 +259,7 @@ function HeroSection() {
           </Card>
 
           <motion.div
-            className="absolute -right-8 top-12 hidden w-52 xl:block"
+            className="absolute -right-5 top-10 hidden w-40 xl:block"
             initial={{ opacity: 0, x: 18 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.7, duration: 0.6 }}
@@ -276,9 +277,9 @@ function RecruiterSnapshot() {
     <section id="profil" className="relative border-y border-white/10 bg-white/[0.03]">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-20 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:px-8">
         <MotionReveal>
-          <Badge>Profil</Badge>
+          <Badge>01 / À propos</Badge>
           <h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-            Un profil data clair, autonome et orienté décision métier.
+            Comprendre les données. Faire avancer les idées.
           </h2>
           <p className="mt-5 text-lg leading-8 text-zinc-400">
             {profile.shortPitch}
@@ -295,22 +296,22 @@ function RecruiterSnapshot() {
             <div className="mb-5 flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm font-medium text-cyan-200">
-                  Lecture recruteur
+                  Mon approche
                 </p>
                 <h3 className="mt-1 text-2xl font-semibold text-white">
-                  Ce qu’il faut retenir
+                  De la rigueur à chaque étape
                 </h3>
               </div>
               <BadgeCheck className="text-emerald-300" size={26} aria-hidden="true" />
             </div>
 
             <div className="grid gap-3">
-              {recruiterFacts.map((fact) => (
+              {recruiterFacts.map((fact, index) => (
                 <div
                   key={fact}
                   className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-4"
                 >
-                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-cyan-300 shadow-[0_0_14px_rgba(56,189,248,0.8)]" />
+                  <span className="fact-number">0{index + 1}</span>
                   <span className="text-sm leading-6 text-zinc-300">{fact}</span>
                 </div>
               ))}
@@ -327,9 +328,9 @@ function SkillsSection() {
     <section id="competences" className="px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
-          eyebrow="Compétences"
-          title="Un stack data organisé par usage métier."
-          description="Pas de pourcentages arbitraires : les compétences sont présentées par familles pour montrer rapidement où elles s’appliquent."
+          eyebrow="02 / Compétences"
+          title="Les bons outils. Pour les bonnes décisions."
+          description="De la préparation des données à la modélisation : une boîte à outils pour chaque étape du projet."
         />
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
@@ -339,14 +340,14 @@ function SkillsSection() {
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="text-sm font-medium text-cyan-200">
-                      {group.eyebrow}
+                      <span className="skill-number">0{index + 1} / </span>{group.eyebrow}
                     </p>
                     <h3 className="mt-2 text-2xl font-semibold text-white">
                       {group.title}
                     </h3>
                   </div>
                   <span className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-xs text-zinc-400">
-                    {group.items.length} skills
+                    {group.items.length} outils
                   </span>
                 </div>
 
@@ -382,41 +383,14 @@ function SkillsSection() {
 }
 
 function ProjectPreview({ index }: { index: number }) {
-  const bars = [
-    [64, 38, 78, 52, 86],
-    [40, 74, 58, 88, 62],
-    [72, 46, 66, 54, 90],
-  ][index % 3]
-
+  const kind = index % 3
   return (
-    <div className="relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-slate-950/80 p-4">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(56,189,248,0.2),transparent_34%),linear-gradient(135deg,rgba(139,92,246,0.16),transparent_55%)]" />
-      <div className="relative flex items-center justify-between">
-        <span className="text-xs uppercase tracking-[0.24em] text-cyan-200">
-          dashboard
-        </span>
-        <BarChart3 size={18} className="text-cyan-200" aria-hidden="true" />
-      </div>
-
-      <div className="relative mt-6 grid grid-cols-[0.9fr_1.1fr] gap-4">
-        <div className="space-y-3">
-          <div className="h-3 w-20 rounded-full bg-white/20" />
-          <div className="h-3 w-14 rounded-full bg-white/10" />
-          <div className="h-3 w-24 rounded-full bg-white/15" />
-        </div>
-        <div className="grid h-28 grid-cols-5 items-end gap-2">
-          {bars.map((height, barIndex) => (
-            <motion.span
-              key={`${height}-${barIndex}`}
-              initial={{ height: 18 }}
-              whileInView={{ height }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: barIndex * 0.06 }}
-              className="rounded-t-lg bg-gradient-to-t from-sky-500 to-cyan-200"
-            />
-          ))}
-        </div>
-      </div>
+    <div className={`project-art project-art-${kind}`} aria-hidden="true">
+      <div className="project-art-top"><span>ÉTUDE DE CAS / 0{index + 1}</span><BarChart3 size={18} /></div>
+      {kind === 0 ? <div className="pipeline-art">{['CSV', 'Python', 'SQL / BI'].map((tool, i) => <div key={tool}><Code2 size={24} /><small>{['SOURCE', 'TRANSFORM', 'INSIGHT'][i]}</small><strong>{tool}</strong></div>)}</div>
+        : kind === 1 ? <div className="music-art"><div className="record"><span>♫</span></div><div className="waveform">{[24,48,34,72,54,90,42,65,32,54,26,42].map((height, i) => <span key={i} style={{height: `${height}%`}} />)}</div></div>
+        : <div className="sports-art"><svg viewBox="0 0 320 100" fill="none"><path d="M0 80H320M0 45H320M0 10H320" stroke="currentColor" opacity=".12"/><path d="M0 85L40 65L80 72L120 38L160 50L200 22L240 34L280 8L320 16" stroke="currentColor" strokeWidth="3"/></svg><span>DONNÉES → MODÈLES → ANALYSE</span></div>}
+      <div className="project-art-bottom">{['Structurer. Fiabiliser. Visualiser.', 'Explorer les similarités musicales.', 'Faire parler les performances.'][kind]}<ArrowUpRight size={16} /></div>
     </div>
   )
 }
@@ -437,9 +411,9 @@ function ProjectsSection() {
     <section id="projets" className="px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
-          eyebrow="Projets"
-          title="Des projets racontés comme des cas business."
-          description="Chaque carte met en avant le problème, les données, les outils, les étapes et le résultat attendu côté métier."
+          eyebrow="03 / Projets sélectionnés"
+          title="De la donnée à la solution."
+          description="Une sélection de projets pour explorer mon approche de l’analyse, de la business intelligence et du machine learning."
         />
 
         <MotionReveal className="mb-8 flex flex-wrap items-center justify-center gap-2">
@@ -452,6 +426,7 @@ function ProjectsSection() {
               key={filter}
               type="button"
               onClick={() => setActiveFilter(filter)}
+              aria-pressed={activeFilter === filter}
               className={`rounded-full border px-4 py-2 text-sm font-semibold transition ${
                 activeFilter === filter
                   ? 'border-cyan-300/40 bg-cyan-300/15 text-cyan-100 shadow-[0_0_30px_rgba(56,189,248,0.16)]'
@@ -476,7 +451,7 @@ function ProjectsSection() {
                   <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent" />
 
                   <div className="relative">
-                    <ProjectPreview index={index} />
+                    <ProjectPreview index={projects.findIndex((item) => item.slug === project.slug)} />
                   </div>
 
                   <div className="relative mt-6 flex items-center justify-between gap-4">
@@ -559,12 +534,12 @@ function ExperienceSection() {
     <section id="experience" className="px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <SectionHeader
-          eyebrow="Expériences"
+          eyebrow="04 / Expériences"
           title="Une progression du développement vers la data science."
-          description="Une timeline pensée pour montrer les missions, les outils utilisés et l’impact produit."
+          description="Des interfaces utilisateurs aux pipelines et modèles prédictifs : une progression portée par la pratique."
         />
 
-        <div className="relative mx-auto max-w-5xl">
+        <div className="experience-timeline relative mx-auto max-w-5xl">
           <div className="absolute left-6 top-0 hidden h-full w-px bg-gradient-to-b from-cyan-300/60 via-white/10 to-transparent md:block" />
 
           <div className="grid gap-6">
@@ -661,17 +636,7 @@ function CertificationSection() {
       </div>
 
       <div className="mx-auto max-w-7xl">
-        <MotionReveal className="mx-auto mb-12 max-w-3xl text-center">
-          <Badge className="mb-4 border-cyan-400/20 bg-cyan-400/10 text-cyan-200">
-            Certifications & Badges
-          </Badge>
-          <h2 className="text-balance bg-gradient-to-r from-white via-cyan-100 to-violet-200 bg-clip-text text-3xl font-semibold tracking-tight text-transparent sm:text-5xl">
-            Certifications & Badges
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-pretty text-base leading-7 text-zinc-400 sm:text-lg">
-            Verified credentials in Cloud, Data and AI.
-          </p>
-        </MotionReveal>
+        <SectionHeader eyebrow="05 / Certifications" title="Apprendre. Pratiquer. Valider." description="Des acquis en data, cloud et intelligence artificielle, accompagnés de leurs certificats consultables." />
 
         <MotionReveal>
           <motion.article
@@ -718,7 +683,7 @@ function CertificationSection() {
                     rel="noreferrer"
                     className="mt-7 bg-[#ff9900] !text-zinc-950 shadow-[0_0_44px_rgba(255,153,0,0.2)] hover:bg-amber-300"
                   >
-                    View AWS Badge
+                    Voir le badge AWS
                     <ArrowUpRight size={17} aria-hidden="true" />
                   </Button>
                 </div>
@@ -738,11 +703,11 @@ function CertificationSection() {
 
         <div className="mb-5 flex items-center gap-4">
           <p className="shrink-0 text-sm font-medium text-zinc-300">
-            Data & Analytics certifications
+            Certifications Data & Analytics
           </p>
           <div className="h-px flex-1 bg-gradient-to-r from-cyan-300/30 via-violet-300/20 to-transparent" />
           <span className="shrink-0 text-xs text-zinc-500">
-            {certifications.length} credentials
+            {certifications.length} certifications
           </span>
         </div>
 
@@ -805,7 +770,7 @@ function CertificationSection() {
                         rel="noreferrer"
                         className="w-full"
                       >
-                        View Certificate
+                        Voir le certificat
                         <ArrowUpRight size={17} aria-hidden="true" />
                       </Button>
                     </div>
@@ -828,9 +793,9 @@ function EducationSection() {
     >
       <div className="mx-auto max-w-7xl">
         <SectionHeader
-          eyebrow="Formation"
-          title="Écoles & parcours académique."
-          description="Une formation orientée ingénierie, data science et intelligence artificielle, présentée avec les logos des écoles pour une lecture plus claire."
+          eyebrow="06 / Formation"
+          title="Une base solide. Une ambition data."
+          description="Un parcours à la croisée de l’ingénierie, de la data science et de l’intelligence artificielle."
         />
 
         <div className="grid gap-5 md:grid-cols-2">
@@ -875,9 +840,9 @@ function ContactSection() {
     <footer id="contact" className="border-t border-white/10 px-4 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
         <div>
-          <Badge>Contact</Badge>
+          <Badge>07 / Et maintenant ?</Badge>
           <h2 className="mt-5 max-w-3xl text-balance text-4xl font-semibold tracking-tight text-white sm:text-6xl">
-            Parlons data, IA, dashboards ou machine learning.
+            Votre prochain projet commence par une conversation.
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-400">
             Recruteur, client ou équipe data : je peux échanger sur une
@@ -921,7 +886,7 @@ function ContactSection() {
                 Message rapide
               </p>
               <h3 className="mt-1 text-2xl font-semibold text-white">
-                Contact recruteur
+                Faisons connaissance
               </h3>
             </div>
             <Send className="text-cyan-200" size={24} aria-hidden="true" />
@@ -936,7 +901,7 @@ function ContactSection() {
             <label className="grid gap-2 text-sm font-medium text-zinc-300">
               Nom
               <input
-                name="name"
+                name="name" autoComplete="name" required
                 className="min-h-12 rounded-2xl border border-white/10 bg-zinc-950/70 px-4 text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300/45"
                 placeholder="Votre nom"
               />
@@ -944,7 +909,7 @@ function ContactSection() {
             <label className="grid gap-2 text-sm font-medium text-zinc-300">
               Email
               <input
-                name="email"
+                name="email" autoComplete="email" required
                 type="email"
                 className="min-h-12 rounded-2xl border border-white/10 bg-zinc-950/70 px-4 text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300/45"
                 placeholder="votre.email@entreprise.com"
@@ -953,7 +918,7 @@ function ContactSection() {
             <label className="grid gap-2 text-sm font-medium text-zinc-300">
               Message
               <textarea
-                name="message"
+                name="message" required
                 rows={4}
                 className="resize-none rounded-2xl border border-white/10 bg-zinc-950/70 px-4 py-3 text-white outline-none transition placeholder:text-zinc-600 focus:border-cyan-300/45"
                 placeholder="Bonjour Phanuel, j’aimerais échanger sur..."
@@ -972,7 +937,7 @@ function ContactSection() {
 
       <div className="mx-auto mt-14 flex max-w-7xl flex-col gap-3 border-t border-white/10 pt-6 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 {profile.name}. Portfolio Data & IA.</p>
-        <p>Built with Next.js, Tailwind CSS and Framer Motion.</p>
+        <a href="#accueil" className="transition hover:text-white">Données claires. Décisions éclairées. ↑</a>
       </div>
     </footer>
   )
