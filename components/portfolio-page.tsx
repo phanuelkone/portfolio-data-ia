@@ -21,7 +21,7 @@ import {
   Sparkles,
 } from 'lucide-react'
 import Image, { type StaticImageData } from 'next/image'
-import profilePhoto from '@/src/assets/profile-photo.jpeg'
+import profilePhoto from '@/src/assets/profile-photo-enhanced.png'
 import { CredlyBadge, credlyBadgeUrl } from '@/components/credly-badge'
 import { MotionReveal } from '@/components/motion-reveal'
 import { Badge } from '@/components/ui/badge'
@@ -236,7 +236,7 @@ function HeroSection() {
                 src={profilePhoto}
                 alt={`Portrait de ${profile.name}`}
                 priority
-                sizes="(max-width: 1024px) 80vw, 420px"
+                sizes="(max-width: 640px) 85vw, (max-width: 1024px) 370px, 395px"
                 className="portrait-image aspect-[4/5] object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-zinc-950 via-zinc-950/72 to-transparent p-5">

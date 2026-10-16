@@ -90,7 +90,7 @@ header nav > div { border: 0; background: transparent; }
 .hero-portrait::before { content: ''; position: absolute; inset: 22px -18px 45px 22px; border: 1px solid #b8f3d536; border-radius: 170px 170px 20px 20px; z-index: -1; }
 .hero-portrait > .portfolio-card:first-of-type { padding: 8px; border-radius: 170px 170px 16px 16px; background: #17221e; border-color: #b8f3d526; }
 .hero-portrait > .portfolio-card:first-of-type > div { border-radius: 160px 160px 12px 12px; border: 0; }
-.portrait-image { width: 100%; filter: saturate(.75); }
+.portrait-image { width: 100%; filter: none; object-position: center 22%; }
 .hero-portrait > .portfolio-card.absolute { left: 30px; right: -5px; bottom: 0; background: #17231f; border-color: #b8f3d530; box-shadow: 0 20px 50px #0003; }
 .hero-portrait .absolute > div[aria-hidden] { background: #14211deF; border-color: #b8f3d530; box-shadow: 0 15px 40px #0003; }
 .hero-portrait .absolute > div[aria-hidden] .bg-gradient-to-t { background: linear-gradient(to top, #3c7e66, #b8f3d5); }
