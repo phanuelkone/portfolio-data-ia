@@ -12,7 +12,12 @@ const iconBase = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons'
 export const profile = {
   name: "N'tcho Phanuel Eliel Koné",
   role: 'Data Analyst | Data Scientist | Business Analyst',
-  location: 'Paris, France',
+  location: 'Paris · Mobilité Île-de-France',
+  phone: '07 51 42 21 65',
+  phoneUrl: 'tel:+33751422165',
+  availability: 'Disponible immédiatement · Alternance 12 mois',
+  schedule: '3 semaines en entreprise / 1 semaine à l’école',
+  softSkills: ['Rigueur', 'Esprit logique', 'Autonomie', 'Organisation', 'Écoute', 'Travail en équipe', 'Capacité de synthèse'],
   email: 'phanuelkone1@gmail.com',
   linkedin:
     'https://www.linkedin.com/in/n%E2%80%99tcho-phanuel-eliel-kon%C3%A9-337931261/',
@@ -21,7 +26,7 @@ export const profile = {
   headline:
     'Je transforme des données brutes en analyses claires, dashboards KPI et modèles prédictifs utiles pour la décision métier.',
   shortPitch:
-    'Étudiant en MSc Computer Science & Data Science à l’ESILV, je construis des pipelines data, des visualisations BI et des modèles machine learning avec une approche orientée impact business.',
+    'Étudiant en Master of Science 2 Computer Science & Data Science à l’ESILV, je me spécialise en Data, Business Intelligence et Intelligence Artificielle. Je fiabilise des données multi-sources, automatise le reporting et conçois des dashboards pour le pilotage de la performance.',
 }
 
 export const navItems = [
@@ -43,7 +48,8 @@ export const heroStats = [
 ]
 
 export const recruiterFacts = [
-  'Cible : Data Analyst, Data Scientist ou Business Analyst',
+  'Recherche : alternance de 12 mois en Data Analysis, Business Analysis ou Data Science',
+  'Disponibilité immédiate · 3 semaines en entreprise / 1 semaine à l’école',
   'Stack principal : Python, SQL, Power BI, Pandas, Scikit-learn',
   'Expérience Data Scientist chez MTN avec pipelines, KPI et churn',
   'Approche orientée dashboard, qualité des données et recommandations métiers',
@@ -106,7 +112,8 @@ export const skillGroups: Array<{
     title: 'Pipelines & données',
     items: [
       { name: 'ETL', mark: 'ETL' },
-      { name: 'API', mark: 'API' },
+      { name: 'API REST', mark: 'API' },
+      { name: 'Spark / PySpark', mark: 'Spark' },
       { name: 'Automatisation', mark: 'Auto' },
       { name: 'MySQL', mark: 'My', logo: `${iconBase}/mysql/mysql-original.svg` },
       {
@@ -298,10 +305,11 @@ export const experiences = [
     tools: ['Python', 'SQL', 'Power BI', 'Machine Learning'],
     outcome: 'Dashboards KPI, pipelines data et modèles de prédiction du churn.',
     items: [
-      'Développement de pipelines de traitement de données avec Python et SQL',
-      'Nettoyage, structuration et amélioration de la qualité des données',
-      'Création de dashboards et suivi des indicateurs de performance',
-      'Développement de modèles de prédiction du churn',
+      'Collecte, consolidation et fiabilisation de données multi-sources pour sécuriser les analyses et reportings',
+      'Automatisation des traitements Python et SQL, contrôles de cohérence et détection d’anomalies',
+      'Définition et suivi de KPI opérationnels ; conception de tableaux de bord Power BI',
+      'Modélisation du churn des ADU (Active Data Users) pour identifier les profils à risque',
+      'Restitution des résultats aux équipes métiers et documentation des processus',
     ],
   },
   {
@@ -313,24 +321,36 @@ export const experiences = [
     outcome: 'Interfaces refondues avec une expérience utilisateur plus claire.',
     items: [
       'Refonte d’interfaces utilisateurs avec HTML, CSS et Bootstrap',
-      'Amélioration de l’expérience utilisateur et optimisation du design',
+      'Amélioration de l’expérience utilisateur, de l’ergonomie et du design des pages web',
+      'Participation aux tests, ajustements responsive et optimisation de la présentation des interfaces',
     ],
   },
 ]
 
 export const education = [
   {
-    period: 'MSc 1',
+    period: '2026 - 2027 · MSc 2',
     title: 'Computer Science & Data Science',
     organization: 'ESILV Paris',
     logo: logoEsilv,
+    subjects: ['Machine Learning, NLP et Computer Vision', 'Spark, Web Scraping et Database Engineering', 'MLOps, programmation avancée et protection des données'],
   },
   {
-    period: 'Bachelor',
+    period: '2025 - 2026 · MSc',
+    title: 'Data Management',
+    organization: 'ECE Paris',
+    logo: logoEce,
+    logoBackground: '#007179',
+    logoClassName: 'size-24',
+    subjects: ['Bases de données, Data Quality, Smart Data et Python', 'Architecture des systèmes d’information et transformation digitale', 'DevOps, IoT, Blockchain et management de projets IT'],
+  },
+  {
+    period: '2022 - 2025 · Bachelor',
     title: 'Développeur Data & IA',
     organization: 'ECE Paris',
     logo: logoEce,
     logoBackground: '#007179',
     logoClassName: 'size-24',
+    subjects: ['Python, SQL, Java, PHP et MySQL', 'Analyse de données, Machine Learning et Power BI', 'Développement d’applications et projets Data & IA'],
   },
 ]

@@ -15,6 +15,7 @@ import {
   Link,
   Mail,
   MapPin,
+  Phone,
   MoveRight,
   Send,
   Sparkles,
@@ -180,10 +181,11 @@ function HeroSection() {
         >
           <Badge className="mb-6 border-emerald-400/20 bg-emerald-400/10 text-emerald-200">
             <span className="mr-2 size-2 rounded-full bg-emerald-300 shadow-[0_0_16px_rgba(110,231,183,0.85)]" />
-            Disponible pour stage, alternance ou mission data
+            {profile.availability}
           </Badge>
 
-          <p className="hero-intro">N’tcho Phanuel Eliel Koné <span> / Paris, France</span></p>
+          <p className="mb-5 text-xs leading-6 text-zinc-400">{profile.schedule}</p>
+          <p className="hero-intro">N’tcho Phanuel Eliel Koné <span> / Mobilité Île-de-France</span></p>
           <h1 className="hero-title">
             La donnée.<br />
             <span>Le sens.</span><br />
@@ -284,6 +286,7 @@ function RecruiterSnapshot() {
           <p className="mt-5 text-lg leading-8 text-zinc-400">
             {profile.shortPitch}
           </p>
+          <div className="mt-6 flex flex-wrap gap-2" aria-label="Savoir-être">{profile.softSkills.map((skill) => <span key={skill} className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-zinc-300">{skill}</span>)}</div>
           <p className="mt-4 text-base leading-7 text-zinc-500">
             Je cherche à contribuer sur des sujets où la donnée doit devenir
             compréhensible : qualité, analyse, dashboards, recommandations et
@@ -824,6 +827,7 @@ function EducationSection() {
                     <p className="mt-2 text-sm text-zinc-400">
                       {item.organization}
                     </p>
+                    <ul className="mt-4 grid gap-2">{item.subjects.map((subject) => <li key={subject} className="text-sm leading-6 text-zinc-400">{subject}</li>)}</ul>
                   </div>
                 </div>
               </Card>
@@ -845,9 +849,7 @@ function ContactSection() {
             Votre prochain projet commence par une conversation.
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-400">
-            Recruteur, client ou équipe data : je peux échanger sur une
-            alternance, un stage, une mission ou un projet orienté analyse et
-            décision métier.
+            Je recherche une alternance de 12 mois en Data Analysis, Business Analysis ou Data Science, avec une disponibilité immédiate et une mobilité en Île-de-France. Rythme : {profile.schedule}.
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-sm text-zinc-400">
             <span className="inline-flex items-center gap-2">
@@ -863,6 +865,7 @@ function ContactSection() {
             </a>
           </div>
 
+          <a href={profile.phoneUrl} className="mt-4 inline-flex items-center gap-2 text-sm text-zinc-300 hover:text-white"><Phone size={16} aria-hidden="true" />{profile.phone}</a>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button href={`mailto:${profile.email}`}>
               Me contacter
