@@ -26,3 +26,6 @@ kmeans-presentation/
 *.njsproj
 *.sln
 *.sw?
+
+# Local design exploration and browser QA artifacts
+.taste-skill/

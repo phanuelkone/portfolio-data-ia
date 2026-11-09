@@ -265,7 +265,7 @@ export const certifications = [
   {
     title: 'Exam - Data Analyst - Level 3 (EN)',
     organization: 'Liora',
-    issued: 'June 9, 2026',
+    issued: '9 juin 2026',
     preview: '/certificates/liora-data-analyst-level-3.png',
     certificateUrl: '/certificates/liora-data-analyst-level-3.pdf',
     skills: ['Data Analysis', 'SQL', 'Power BI', 'Python'],
@@ -273,7 +273,7 @@ export const certifications = [
   {
     title: 'DataScientest First Exam',
     organization: 'DataScientest',
-    issued: 'December 2024',
+    issued: 'Décembre 2024',
     preview: '/certificates/datascientest-first-exam.svg',
     certificateUrl: '/certificates/datascientest-first-exam.pdf',
     skills: ['Python', 'Machine Learning', 'Data Analysis', 'Pandas'],
@@ -281,7 +281,7 @@ export const certifications = [
   {
     title: 'Programming for DS TechAway niv2',
     organization: 'TechAway',
-    issued: 'December 2024',
+    issued: 'Décembre 2024',
     preview: '/certificates/programming-ds-techaway-niv2.svg',
     certificateUrl: '/certificates/programming-ds-techaway-niv2.pdf',
     skills: ['Python', 'Pandas', 'Scikit-learn', 'Machine Learning'],
@@ -289,7 +289,7 @@ export const certifications = [
   {
     title: 'SQL TechAway niv2',
     organization: 'TechAway',
-    issued: 'December 2024',
+    issued: 'Décembre 2024',
     preview: '/certificates/sql-techaway-niv2.svg',
     certificateUrl: '/certificates/sql-techaway-niv2.pdf',
     skills: ['SQL', 'Data Analysis', 'Power BI'],

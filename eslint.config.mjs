@@ -5,6 +5,7 @@ export default tseslint.config(
   {
     ignores: [
       '.next/**',
+      '.taste-skill/**',
       'dist/**',
       'node_modules/**',
       'next-env.d.ts',
