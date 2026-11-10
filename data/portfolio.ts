@@ -1,7 +1,6 @@
 import type { StaticImageData } from 'next/image'
 import excelLogo from '@/src/assets/excel-logo.svg'
 import logoEce from '@/src/assets/logo-ece.jpg'
-import logoEsilv from '@/src/assets/logo-esilv.png'
 import logo2ist from '@/src/assets/logo-2ist.png'
 import logoMtn from '@/src/assets/logo-mtn.png'
 import pentahoLogo from '@/src/assets/pentaho-logo.png'
@@ -15,18 +14,18 @@ export const profile = {
   location: 'Paris · Mobilité Île-de-France',
   phone: '07 51 42 21 65',
   phoneUrl: 'tel:+33751422165',
-  availability: 'Disponible immédiatement · Alternance 12 mois',
-  schedule: '3 semaines en entreprise / 1 semaine à l’école',
+  availability: 'Disponible immédiatement · Stage de 4 à 6 mois',
+  opportunity: 'Stage de 4 à 6 mois',
   softSkills: ['Rigueur', 'Esprit logique', 'Autonomie', 'Organisation', 'Écoute', 'Travail en équipe', 'Capacité de synthèse'],
   email: 'phanuelkone1@gmail.com',
   linkedin:
     'https://www.linkedin.com/in/n%E2%80%99tcho-phanuel-eliel-kon%C3%A9-337931261/',
   github: 'https://github.com/phanuelkone',
-  cvUrl: '/cv-ntcho-phanuel-kone.pdf',
+  cvUrl: '/Cv%20stage%20Phanuel%20Eliel.pdf',
   headline:
     'Je transforme des données brutes en analyses claires, dashboards KPI et modèles prédictifs utiles pour la décision métier.',
   shortPitch:
-    'Étudiant en Master of Science 2 Computer Science & Data Science à l’ESILV, je me spécialise en Data, Business Intelligence et Intelligence Artificielle. Je fiabilise des données multi-sources, automatise le reporting et conçois des dashboards pour le pilotage de la performance.',
+    'Étudiant en MSc 2 Data Management & Intelligence Artificielle à l’ECE Paris, je recherche un stage de 4 à 6 mois dans les métiers de la Data. Je fiabilise des données multi-sources, automatise le reporting et conçois des dashboards pour le pilotage de la performance.',
 }
 
 export const navItems = [
@@ -48,8 +47,8 @@ export const heroStats = [
 ]
 
 export const recruiterFacts = [
-  'Recherche : alternance de 12 mois en Data Analysis, Business Analysis ou Data Science',
-  'Disponibilité immédiate · 3 semaines en entreprise / 1 semaine à l’école',
+  'Recherche : stage de 4 à 6 mois en Data Analysis, Business Analysis ou Data Science',
+  'Disponibilité immédiate · Mobilité Île-de-France',
   'Stack principal : Python, SQL, Power BI, Pandas, Scikit-learn',
   'Expérience Data Scientist chez MTN avec pipelines, KPI et churn',
   'Approche orientée dashboard, qualité des données et recommandations métiers',
@@ -330,10 +329,16 @@ export const experiences = [
 export const education = [
   {
     period: '2026 - 2027 · MSc 2',
-    title: 'Computer Science & Data Science',
-    organization: 'ESILV Paris',
-    logo: logoEsilv,
-    subjects: ['Machine Learning, NLP et Computer Vision', 'Spark, Web Scraping et Database Engineering', 'MLOps, programmation avancée et protection des données'],
+    title: 'Data Management & Intelligence Artificielle',
+    organization: 'ECE Paris',
+    logo: logoEce,
+    logoBackground: '#007179',
+    logoClassName: 'size-24',
+    subjects: [
+      'Data Engineering : bases de données avancées, infrastructures Big Data, plateformes cloud et traitement des données en temps réel',
+      'Déploiement de modèles de Machine Learning, maîtrise du cycle de vie des données et plateformes MLOps',
+      'Gestion agile et risques, éthique du numérique, souveraineté des données et communication',
+    ],
   },
   {
     period: '2025 - 2026 · MSc',
